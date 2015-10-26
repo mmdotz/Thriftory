@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Description</th>
       <th>Quantity</th>
       <th>Shipping</th>
@@ -19,12 +20,13 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= item.description %></td>
         <td><%= item.quantity %></td>
         <td><%= item.shipping %></td>
         <td><%= item.storage_loc %></td>
         <td><%= item.status %></td>
-        <td><%= item.source %></td>
+        <td><%= item.source.name %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
