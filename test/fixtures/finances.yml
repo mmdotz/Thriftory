@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  procure_cost: 1
+  shipping_cost: 1
+  pre-sale_notes: MyString
+  pre-sale_cost: 1
+  buyer_pmt: 1
+  item_id: 
+
+two:
+  procure_cost: 1
+  shipping_cost: 1
+  pre-sale_notes: MyString
+  pre-sale_cost: 1
+  buyer_pmt: 1
+  item_id: 

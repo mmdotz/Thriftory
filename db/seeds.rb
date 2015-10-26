@@ -5,3 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Source.create({
+  name:     "unknown",
+  date:     Faker::Date.between(2.years.ago, Date.today),
+  address:  Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
+  type:     "Yard Sale"
+  }),
+
+Source.create({
+  name:     "Betty Sue Filmore",
+  date:     Faker::Date.between(2.years.ago, Date.today),
+  address:  Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
+  type:     "Estate Sale"
+  }),
+
+Source.create({
+  name:     "Jim's Gems",
+  date:     Faker::Date.between(2.years.ago, Date.today),
+  address:  Faker::Address.street_address << " Boston, MA, " << Faker::Address.zip,
+  type:     "Flea Market"
+  }),
+
+Source.create({
+  name:     "Pete",
+  date:     Faker::Date.between(2.years.ago, Date.today),
+  address:  "unknown",
+  type:     "Craigslist"
+  })

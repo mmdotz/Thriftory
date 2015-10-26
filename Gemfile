@@ -45,10 +45,13 @@ group :development do
   gem 'spring'
 end
 
-
+gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'bcrypt'
+gem 'figaro'
+
+
 group :production do
   gem 'puma'
   gem 'rails_12factor'
