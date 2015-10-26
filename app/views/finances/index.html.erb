@@ -20,10 +20,10 @@
       <tr>
         <td><%= finance.procure_cost %></td>
         <td><%= finance.shipping_cost %></td>
-        <td><%= finance.pre-sale_notes %></td>
-        <td><%= finance.pre-sale_cost %></td>
+        <td><%= finance.pre_sale_notes %></td>
+        <td><%= finance.pre_sale_cost %></td>
         <td><%= finance.buyer_pmt %></td>
-        <td><%= finance.item %></td>
+        <td><%= finance.item.description %></td>
         <td><%= link_to 'Show', finance %></td>
         <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
         <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>

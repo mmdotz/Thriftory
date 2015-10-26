@@ -69,6 +69,6 @@ class FinancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def finance_params
-      params.require(:finance).permit(:procure_cost, :shipping_cost, :pre-sale_notes, :pre-sale_cost, :buyer_pmt, :item_id)
+      params.require(:finance).permit(:procure_cost, :shipping_cost, :pre_sale_notes, :pre_sale_cost, :buyer_pmt, :item_id)
     end
 end

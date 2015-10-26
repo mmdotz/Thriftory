@@ -12,12 +12,12 @@
 
 <p>
   <strong>Pre-sale notes:</strong>
-  <%= @finance.pre-sale_notes %>
+  <%= @finance.pre_sale_notes %>
 </p>
 
 <p>
   <strong>Pre-sale cost:</strong>
-  <%= @finance.pre-sale_cost %>
+  <%= @finance.pre_sale_cost %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Item:</strong>
-  <%= @finance.item %>
+  <%= @finance.item.description %>
 </p>
 
 <%= link_to 'Edit', edit_finance_path(@finance) %> |

@@ -2,17 +2,14 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @item.category %>
 </p>
 
 <p>
   <strong>Subcat1:</strong>
-  <%= @item.subcat1 %>
 </p>
 
 <p>
   <strong>Subcat2:</strong>
-  <%= @item.subcat2 %>
 </p>
 
 <p>
@@ -41,13 +38,8 @@
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @item.photo %>
-</p>
-
-<p>
   <strong>Source:</strong>
-  <%= @item.source %>
+  <%= @item.source.name %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |

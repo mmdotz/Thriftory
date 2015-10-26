@@ -15,7 +15,7 @@
     <% @subcat2s.each do |subcat2| %>
       <tr>
         <td><%= subcat2.name %></td>
-        <td><%= subcat2.subcat1 %></td>
+        <td><%= subcat2.subcat1.name %></td>
         <td><%= link_to 'Show', subcat2 %></td>
         <td><%= link_to 'Edit', edit_subcat2_path(subcat2) %></td>
         <td><%= link_to 'Destroy', subcat2, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -5,9 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Subcat1</th>
-      <th>Subcat2</th>
       <th>Description</th>
       <th>Quantity</th>
       <th>Shipping</th>
@@ -22,15 +19,11 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.category %></td>
-        <td><%= item.subcat1 %></td>
-        <td><%= item.subcat2 %></td>
         <td><%= item.description %></td>
         <td><%= item.quantity %></td>
         <td><%= item.shipping %></td>
         <td><%= item.storage_loc %></td>
         <td><%= item.status %></td>
-        <td><%= item.photo %></td>
         <td><%= item.source %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
