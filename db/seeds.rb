@@ -33,3 +33,19 @@ Source.create({
   address:  "unknown",
   type:     "Craigslist"
   })
+
+
+
+Item.create({
+  category:     1,
+  subcat1:      1,
+  subcat2:      1,
+  description:  "Sofa with pullout, green, pillows"
+  quantity:     1,
+  shipping:     "buyer",
+  storage_loc:  "garage 35",
+  status:       "stored",
+  condition:    "broken",
+  photo:        "/app/assets/images/IMG_108.jpg"
+  source_id:    1
+  })

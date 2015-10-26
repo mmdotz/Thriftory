@@ -49,7 +49,7 @@ gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'bcrypt'
-gem 'figaro'
+gem 'figaro' #needed for file upload key ignore
 
 
 group :production do
