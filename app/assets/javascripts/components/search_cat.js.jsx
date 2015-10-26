@@ -1,14 +1,15 @@
-//From the landing page choice
+//On landing page search all items bar
 //start with an empty search result
 
 var Search = React.createClass({
   getInitialState: function () {
     return {
-      items: [],
+      all_items: [],
+      filtered_items: []
     };
   },
 
-// get all the categories
+// get all the items
   componentDidMount: function () {
     $.ajax({
       url: '/items',
@@ -16,6 +17,7 @@ var Search = React.createClass({
       method: 'GET'
     }).done(function (response) {
 
+//change state from empty to return all items
       this.setState({
         all_items: response,
         filtered_items: response
@@ -35,16 +37,27 @@ var Search = React.createClass({
           <table className="table table-hover">
             <thead>
               <tr>
-                <th>Return items attributes here</th>
-
+                <th>Item #</th>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Shipping paid</th>
+                <th>Storage Location</th>
+                <th>Status</th>
+                <th>Source</th>
+              </tr>
             </thead>
             <tbody>
               {this.state.filtered_items.map(function (item) {
                 return (
+                  //linked items returned after  filters
                   <tr>
+                    <td>{ item.id }</td>
                     <td><a href={'/items/' + item.id}>{ item.description } </a></td>
-                    <td> { item.storage_loc }</td>
-                    <td> { item.status }</td>
+                    <td>{ item.quantity }</td>
+                    <td>{ item.shipping }</td>
+                    <td>{ item.storage_loc }</td>
+                    <td>{ item.status }</td>
+                    <td>{ item.source.name }</td>
                   </tr>
                 );
               })}
