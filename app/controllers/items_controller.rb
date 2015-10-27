@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render json: @items.to_json(include: :source)
+        render json: @items.to_json(include: :source, methods: :photo_url)
       end
       format.html
       format.csv {send_data @items.to_csv}

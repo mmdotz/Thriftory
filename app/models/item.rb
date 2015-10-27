@@ -17,5 +17,9 @@ class Item < ActiveRecord::Base
     end
   end
 
+  def photo_url
+    ActionController::Base.helpers.attachment_url(self, :photo, :fill, 50, 50, format: :jpg)
+  end
+
 
 end
