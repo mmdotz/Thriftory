@@ -5,7 +5,8 @@ var Search = React.createClass({
   getInitialState: function () {
     return {
       all_items: [],
-      filtered_items: []
+      filtered_items: [],
+      search: ''
     };
   },
 
@@ -57,7 +58,6 @@ var Search = React.createClass({
                     <td>{ item.shipping }</td>
                     <td>{ item.storage_loc }</td>
                     <td>{ item.status }</td>
-                    <td>{ item.source.name }</td>
                   </tr>
                 );
               })}
