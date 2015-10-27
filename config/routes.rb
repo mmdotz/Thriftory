@@ -7,5 +7,15 @@ Rails.application.routes.draw do
   resources :items
   resources :sources
 
-  root 'sources#index'
+  resources :categories do
+    resources :subcat1s do
+      resources :subcat2s
+    end
+  end
+
+  resources :sources do
+    resources :items
+  end
+
+  root 'items#index'
 end
