@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     resources :items
   end
 
-  root 'items#index'
+  get '/home',   to: 'homes#index',    as: 'home'
+
+  root 'homes#index'
 end

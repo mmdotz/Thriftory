@@ -44,6 +44,7 @@ var Search = React.createClass({
                 <th>Shipping paid</th>
                 <th>Storage Location</th>
                 <th>Status</th>
+                <th>Source</th>
               </tr>
             </thead>
             <tbody>
@@ -57,6 +58,7 @@ var Search = React.createClass({
                     <td>{ item.shipping }</td>
                     <td>{ item.storage_loc }</td>
                     <td>{ item.status }</td>
+                    <td>{ item.source.name }</td>
                   </tr>
                 );
               })}
