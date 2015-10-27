@@ -5,9 +5,4 @@ class HomesController < ApplicationController
   end
 
 
-
-  # def formatted_start_time
-  #   Time.now.strftime("%B %d, %Y @ %I:%M%P")
-  # end
-
 end

@@ -45,6 +45,7 @@ var Search = React.createClass({
                 <th>Storage Location</th>
                 <th>Status</th>
                 <th>Source</th>
+                <th>Photo</th>
               </tr>
             </thead>
             <tbody>
@@ -59,7 +60,7 @@ var Search = React.createClass({
                     <td>{ item.storage_loc }</td>
                     <td>{ item.status }</td>
                     <td>{ item.source.name }</td>
-                    <td>{ item.photo }</td>
+                    <td><img src={ item.photo_id } /></td> 
                   </tr>
                 );
               })}
