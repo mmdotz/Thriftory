@@ -2,9 +2,9 @@ class Item < ActiveRecord::Base
   belongs_to :source
   belongs_to :subcat2
   has_many :finances
+  has_many :photos
 
   attachment :photo
-
 
   def self.to_csv
     attributes = %w(description quantity shipping storage_loc status source_id
@@ -16,5 +16,6 @@ class Item < ActiveRecord::Base
       end
     end
   end
+
 
 end

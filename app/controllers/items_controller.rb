@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
+
     respond_to do |format|
       format.json do
         render json: @items.to_json(include: :source)
@@ -36,8 +37,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
+        format.html { redirect_to @items, notice: 'Item was successfully created.' }
+        format.json { render :show, status: :created, location: @items }
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -77,6 +78,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:category, :subcat1, :subcat2, :description, :quantity, :shipping, :storage_loc, :status, :photo, :source_id)
+      params.require(:item).permit(:category, :subcat1, :subcat2, :description, :quantity, :shipping, :storage_loc, :status, :source_id, :photo )
     end
 end
