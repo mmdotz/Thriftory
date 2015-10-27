@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   get '/home',   to: 'homes#index',    as: 'home'
+  get '/items.csv', to: 'items#index'
+
 
   root 'homes#index'
 end
