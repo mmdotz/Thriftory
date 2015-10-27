@@ -44,7 +44,6 @@ var Search = React.createClass({
                 <th>Shipping paid</th>
                 <th>Storage Location</th>
                 <th>Status</th>
-                <th>Source</th>
               </tr>
             </thead>
             <tbody>

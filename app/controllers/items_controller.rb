@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @items = Item.all
 
     respond_to do |format|
+      format.json
       format.html
       format.csv {send_data @items.to_csv}
     end
