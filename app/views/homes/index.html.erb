@@ -1,13 +1,12 @@
-<div class="jumbotron">
-    <h3>Thrill of the find</h4>
-      <p>This site was designed using bootstrap</p>
-</div>
+<p>Home page - do not show nav bar, except small button logout</p>
+
+<!-- ad image to page -->
+ <%= image_tag "saletag.png" %> 
+
+<h3> <%= link_to "Go to the last item inventoried", item_path(@item) %></h3>
+<h3> <%= link_to "Reports", items_path %></h3> <!-- change this-->
+<h3> <%= link_to "View All", items_path %></h3>
 
 <h2> <%= Time.now.strftime("%B %d, %Y") %></h2>
 <h3> Total items in inventory: <%= @inventory %> </h3>
 <h3> Total items added this week: <%= total_week_items %> </h3>
-<h3> <%= link_to "Go to the last item inventoried", item_path(@item) %></h3>
-<h3> Get Reports(circle button) </h3>
-<h3> View Last item inventoried (circle button) </h3>
-
-Sale icon here
