@@ -11,7 +11,7 @@ Logo to the right, link to Home
 <h3> Total items in inventory: <%= @inventory %> </h3>
 <h3> Total items added this week: <%= total_week_items %> </h3>
 
-
+<!--Loads wayyyy slow -->
 <p> Items by status</p>
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>

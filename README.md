@@ -1,4 +1,5 @@
-#Thriftory, Inventory app for Thrifters
+#Thriftory
+Inventory app for Thrifters
 
 ##Gems and libraries used
 - Devise?
@@ -6,4 +7,5 @@
 - Mandrill?
 - Bootstrap
 - Faker
-- Kaminari
+- Kaminari?
+- Chartkick
