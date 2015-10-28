@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :photos
   resources :subcat2s
   resources :subcat1s
