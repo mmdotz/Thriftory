@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     session[:logged_in_users_id].present?
   end
 
+  def total_week_items
+    Item.where("created_at > ?", Time.now-7.days).count
+  end
+
   helper_method :user_logged_in?
+  helper_method :total_week_items
 
 end
