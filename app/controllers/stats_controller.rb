@@ -4,7 +4,7 @@ class StatsController < ApplicationController
     @inventory = @items.count
     @item = Item.last
   end
-  
+
   def show
   end
 end

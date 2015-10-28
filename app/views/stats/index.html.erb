@@ -18,4 +18,11 @@ Logo to the right, link to Home
 <%= pie_chart Item.group(:condition).count %>
 
 <p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
-<p>Total expenses: <%= Finance.all.map { |finance| finance.total_outlay }.sum %> </p>
+<p>Total expenses: <%= Finance.all.map { |finance| finance.item_total_outlay }.sum %> </p>
+
+<% if Finance.all.map { |finance| finance.buyer_pmt }.sum > Finance.sum_total_outlay
+ %>
+<%= "You are in the black!" %>
+<% else %>
+<%= "oof, expenses exceed profits. Go make a sale." %>
+<% end %>
