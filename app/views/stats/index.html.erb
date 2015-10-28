@@ -16,3 +16,6 @@ Logo to the right, link to Home
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>
 <%= pie_chart Item.group(:condition).count %>
+
+<p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
+<p>Total expenses: <%= Finance.all.map { |finance| finance.total_outlay }.sum %> </p>
