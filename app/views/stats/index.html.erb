@@ -4,6 +4,14 @@
 Nav bar at top
 Logo to the right, link to Home
 
+
+<h1>Today's Stats</h1>
+
+<h2> <%= Time.now.strftime("%B %d, %Y") %></h2>
+<h3> Total items in inventory: <%= @inventory %> </h3>
+<h3> Total items added this week: <%= total_week_items %> </h3>
+
+
 <p> Items by status</p>
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>

@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  resources :items do
+    resources :finances
+  end
+
   get '/home',   to: 'homes#index',    as: 'home'
   get '/items.csv', to: 'items#index'
 
