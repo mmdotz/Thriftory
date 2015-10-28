@@ -33,3 +33,17 @@ Source.create({
   address:  "unknown",
   type_of:     "Craigslist"
   })
+
+  Item.create({
+    description
+    quantity
+    shipping
+    storage_loc
+    status
+    condition
+    source_id
+    subcat2_id
+
+
+
+    })

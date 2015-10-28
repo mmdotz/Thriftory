@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
-
+    #in Item model, created helper method to tell attachment method which object
+    #we are passing in for refile upload
     respond_to do |format|
       format.json do
         render json: @items.to_json(include: :source, methods: :photo_url)

@@ -17,6 +17,9 @@ class Item < ActiveRecord::Base
     end
   end
 
+  # creation of helper method to allow attachment method to know which object and field to use
+  # see Item controller index action for use
+
   def photo_url
     ActionController::Base.helpers.attachment_url(self, :photo, :fill, 50, 50, format: :jpg)
   end
