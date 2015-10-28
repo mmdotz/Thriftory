@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'stats/index'
+
+  get 'stats/show'
+
   resources :users
   resources :photos
   resources :subcat2s
