@@ -23,7 +23,10 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item       = Item.new
+    @categories = Category.all
+    @subcat1s   = Subcat1.all
+    @subcat2s   = Subcat2.all
   end
 
   # GET /items/1/edit

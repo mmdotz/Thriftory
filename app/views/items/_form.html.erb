@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <%= collection_select(nil, :category_id,  @categories,  :id, :name, {:prompt   => "Select a Category"}, {:id => 'categories_select'}) %>
+  <%= collection_select(nil, :subcat1_id, @subcat1s, :id, :name, {:prompt   => "Select 1st SubCategory"}, {:id => 'subcat1s_select'}) %>
+  <%= collection_select(nil, :subcat2_id, @subcat2s, :id, :name, {:prompt   => "Select 2nd SubCategory"}, {:id => 'subcat2s_select'}) %>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
