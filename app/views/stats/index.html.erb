@@ -1,7 +1,5 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-<h1>Stats#index</h1>
-Nav bar at top
 Logo to the right, link to Home
 
 
@@ -11,17 +9,26 @@ Logo to the right, link to Home
 <h3> Total items in inventory: <%= @inventory %> </h3>
 <h3> Total items added this week: <%= total_week_items %> </h3>
 
+<td><%= link_to 'Customize report - do this',finances_path, class: "btn btn-default" %></td>
+
+
 <!--Loads wayyyy slow -->
 <p> Items by status</p>
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>
 <%= pie_chart Item.group(:condition).count %>
 
+<!--make this interactive? -->
 <p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
 <p>Total expenses: <%= Finance.all.map { |finance| finance.item_total_outlay }.sum %> </p>
 
-<% if Finance.all.map { |finance| finance.buyer_pmt }.sum > Finance.sum_total_outlay
- %>
+<!--can't do below until there are categoriesin items
+<%# bar_chart Item.group(:category).sum(:buyer_pmt) %>
+-->
+<p>Value per category</p>
+
+
+<% if Finance.total_profit? %>
 <%= "You are in the black!" %>
 <% else %>
 <%= "oof, expenses exceed profits. Go make a sale." %>

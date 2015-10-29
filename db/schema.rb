@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028155213) do
+ActiveRecord::Schema.define(version: 20151029163336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20151028155213) do
     t.string   "type_of",                                    null: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.integer  "user_id"
   end
 
   create_table "subcat1s", force: :cascade do |t|
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 20151028155213) do
   add_foreign_key "items", "sources"
   add_foreign_key "items", "subcat2s"
   add_foreign_key "photos", "items"
+  add_foreign_key "sources", "users"
   add_foreign_key "subcat1s", "categories"
   add_foreign_key "subcat2s", "subcat1s"
 end

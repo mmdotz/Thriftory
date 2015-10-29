@@ -1,5 +1,4 @@
-<h1>Listing Categories</h1>
-
+<h3>Categories</h3>
 <table>
   <thead>
     <tr>
@@ -8,20 +7,18 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+keep id for dev only
   <tbody>
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.id %></td>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--link to item.where(category_id: [:params_id])-->
+        <td><%= link_to category.name, categories_path %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Category', new_category_path %>
+or
+<%= link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
