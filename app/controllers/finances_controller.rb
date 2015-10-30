@@ -10,11 +10,11 @@ class FinancesController < ApplicationController
   # GET /finances/1
   # GET /finances/1.json
   def show
+    
   end
 
   # GET /finances/new
   def new
-    @finance = Finance.new
   end
 
   # GET /finances/1/edit
