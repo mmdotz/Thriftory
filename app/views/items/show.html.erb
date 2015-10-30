@@ -22,10 +22,6 @@
   <strong>Condition:</strong>
   <%= @item.condition %>
 </p>
-<p>
-  <strong>Source:</strong>
-  <%= @item.source.name %>
-</p>
 
 <p>
   <strong>Buyer Pmt:</strong>
@@ -34,6 +30,10 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Source:</strong>
+  <%= @item.source.name %>
+</p>
 <p>
   <% if @item.status == "sold" %>
   <strong>Shipping:</strong>

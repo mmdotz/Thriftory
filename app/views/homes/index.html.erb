@@ -3,6 +3,10 @@
 <!-- ad image to page -->
  <%= image_tag "saletag.png" %>
 
+<% unless @inventory.nil? %>
 <h3> <%= link_to "Go to the last item inventoried", item_path(Item.last) %></h3>
 <h3> <%= link_to "Reports", items_path %></h3> <!-- change this-->
 <h3> <%= link_to "View All", items_path %></h3>
+<% else %>
+<h3><%= link_to "Start your inventory", new_item_path %></h3>
+<% end %>
