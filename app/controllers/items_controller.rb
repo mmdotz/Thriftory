@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
   def update_subcat2
     subcat1 = Subcat1.find(params[:subcat1_id])
-    @subcat2s = Subcat1.subcat2s.map{ |z| [z.name, z.id] }.insert(0, "Select a Subcategory 2")
+    @subcat2s = subcat1.subcat2s.map{ |z| [z.name, z.id] }.insert(0, "Select a Subcategory 2")
   end
 
   def edit
