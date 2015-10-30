@@ -1,7 +1,7 @@
  $(document).ready(function() {
     $('#categories_select').change(function() {
       $.ajax({
-        url: subcategory1_path,
+        url: '/update_subcat1',
         data: {
           category_id : $('#categories_select').val()
         },
@@ -10,7 +10,7 @@
     });
     $('#subcat1s_select').change(function() {
       $.ajax({
-        url: subcategory2_path,
+        url: '/update_subcat2',
         data: {
           subcat1_id : $('#subcat1s_select').val()
         },
