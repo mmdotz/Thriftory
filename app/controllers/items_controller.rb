@@ -29,12 +29,20 @@ class ItemsController < ApplicationController
     @subcat2s   = Subcat2.all
   end
 
-  # GET /items/1/edit
+  def update_subcat1
+    category = Category.find(params[:category_id])
+    @subcat1 = category.subcat1s.map{ |x| [x.name, x.id] }.insert(0, "Select Subcategory 1")
+    @subcat2 = category.subcat2s.map{ |y| [y.name, y.id] }.insert(0, "Select Subcategory 2")
+  end
+
+  def update_subcat2
+    subcat1 = Subcat1.find(params[:subcat1_id])
+    @subcat2s = Subcat1.subcat2s.map{ |z| [z.name, z.id] }.insert(0, "Select a Subcategory 2")
+  end
+
   def edit
   end
 
-  # POST /items
-  # POST /items.json
   def create
     @item = Item.new(item_params)
 
