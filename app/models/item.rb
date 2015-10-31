@@ -1,8 +1,11 @@
 class Item < ActiveRecord::Base
-  belongs_to :source
-  belongs_to :subcat2
-  has_many :finances
-  has_many :photos
+  belongs_to  :source
+  belongs_to  :subcat2
+  has_many    :finances
+  has_many    :photos
+
+  accepts_nested_attributes_for :finances
+  validates_associated          :finances
 
   attachment :photo
 

@@ -35,10 +35,15 @@
   <%= @item.source.name %>
 </p>
 <p>
-  <% if @item.status == "sold" %>
+  <% if @item.status.downcase == "sold" %>
   <strong>Shipping:</strong>
   <%= @item.shipping %>
-  <strong>Sold for : $</strong>
+    <% if @item.shipping.downcase == "free" %>
+    <strong>Shipping paid:</strong>
+    <% @item.finances.shipping_cost %>
+    <strong>Sold for : $</strong>
+    <%= @item.finances.buyer_pmt %>
+    <% end %>
   <% end %>
 </p>
 
