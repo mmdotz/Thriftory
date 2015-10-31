@@ -14,15 +14,15 @@
       </div>
     <% end %>
 
-    <div>
+    <div class="field">
       <%= collection_select(@item, :category_id,  @categories,  :id, :name,
       {:prompt   => "Select a Category"}, {:id => 'categories_select'}) %>
     </div>
-    <div>
+    <div class="field">
       <%= collection_select(@item, :subcat1_id, @subcat1s, :id, :name,
       {:prompt   => "Select 1st SubCategory"}, {:id => 'subcat1s_select'}) %>
     </div>
-    <div>
+    <div class="field">
       <%= collection_select(@item, :subcat2_id, @subcat2s, :id, :name,
       {:prompt   => "Select 2nd SubCategory"}, {:id => 'subcat2s_select'}) %>
     </div>
@@ -55,10 +55,8 @@
       <%= f.label :source_id %><br>
       <%= f.text_field :source_id %>
     </div>
-    <div class="field">
-      <%= f.label :photo %><br>
-      <%= f.attachment_field :photo %>
-    </div>
+
+<!--f is parent of p so f.fields iterates over all p and f.submit captures all p -->
 
     <%= f.fields_for :finances do |p| %>
       <div class="field">
@@ -78,6 +76,10 @@
         <%= p.text_field :buyer_pmt, placeholder:"Buyer Pmt", class: "form-control" %>
       </div>
     <% end %>
+    <div class="field">
+      <%= f.label :photo %><br>
+      <%= f.attachment_field :photo %>
+    </div>
 
 
     <div class="actions">

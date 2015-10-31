@@ -42,7 +42,7 @@
   <% @item.finances.each do |finance| %>
     <% if @item.shipping.downcase == "free" %>
     <strong>Shipping paid:</strong>
-    <% finance.shipping_cost %>
+    <%= finance.shipping_cost %>
     <strong>Sold for : $</strong>
     <%= finance.buyer_pmt %>
     <% end %>
