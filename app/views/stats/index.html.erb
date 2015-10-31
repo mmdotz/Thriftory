@@ -5,12 +5,13 @@ Logo to the right, link to Home
 
 <h1>Today's Stats</h1>
 
+
+
 <h2> <%= Time.now.strftime("%B %d, %Y") %></h2>
 <h3> Total items in inventory: <%= @inventory %> </h3>
 <h3> Total items added this week: <%= total_week_items %> </h3>
 
 <td><%= link_to 'Customize report - do this',finances_path, class: "btn btn-default" %></td>
-
 
 <!--Loads wayyyy slow -->
 <p> Items by status</p>

@@ -29,7 +29,7 @@
 
     <div class="field">
       <%= f.label :description %><br>
-      <%= f.text_field :description %>
+      <%= f.text_area :description, rows: 2 %>
     </div>
     <div class="field">
       <%= f.label :quantity %><br>
@@ -59,6 +59,21 @@
       <%= f.label :photo %><br>
       <%= f.attachment_field :photo %>
     </div>
+
+    <%= f.fields_for :finances do |p| %>
+      <div class="form group">
+        <%= p.text_field :procure_cost, placeholder:"Procurement cost", class: "form-control" %>
+      </div>
+      <div class="form group">
+        <%= p.text_field :shipping_cost, placeholder:"Shipping paid", class: "form-control" %>
+      </div>
+      <div class="form group">
+        <%= p.text_field :pre_sale_cost, placeholder:"Pre-sale cost total", class: "form-control" %>
+      </div>
+      <div class="form group">
+        <%= p.text_field :buyer_pmt, placeholder:"Buyer Pmt", class: "form-control" %>
+      </div>
+    <% end %>
 
 
     <div class="actions">

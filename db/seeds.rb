@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.new({
-  username:   "Jay",
-  email:      "jd@example.com",
-  admin:      false
+  username:   "Joanne",
+  email:      "jh@example.com",
+  admin:      true
   })
   user.password = "password"
   user.save!
@@ -19,7 +19,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
   type_of:    "Yard Sale",
-  user_id:    1
+  user_id:    2
   })
 
 Source.create({
@@ -27,7 +27,7 @@ Source.create({
   date:     Faker::Date.between(2.years.ago, Date.today),
   address:  Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
   type_of:     "Estate Sale",
-  user_id:    1
+  user_id:    2
   })
 
 Source.create({

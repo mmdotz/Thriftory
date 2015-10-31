@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item       = Item.new
+    @item.finances.new
     @categories = Category.all
     @subcat1s   = []
     @subcat2s   = Subcat2.all
@@ -90,6 +91,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:category, :subcat1, :subcat2, :description, :quantity, :shipping, :storage_loc, :status, :source_id, :photo )
+      params.require(:item).permit(:category_id, :subcat1_id, :subcat2_id, :description, :quantity, :shipping, :storage_loc, :status, :source_id, :photo )
     end
 end
