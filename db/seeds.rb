@@ -14,6 +14,22 @@ user = User.new({
   user.password = "password"
   user.save!
 
+user = User.new({
+  username:   "Jayson",
+  email:      "jd@example.com",
+  admin:      false
+  })
+  user.password = "password"
+  user.save!
+
+user = User.new({
+  username:   "Annika",
+  email:      "ayd@example.com",
+  admin:      true
+  })
+  user.password = "password"
+  user.save!
+
 Source.create({
   name:       "unknown",
   date:       Faker::Date.between(2.years.ago, Date.today),
@@ -202,3 +218,12 @@ Subcat2.create({ name: "Hair", subcat1_id: 21})
 Subcat2.create({ name: "Hats & Wigs", subcat1_id: 21})
 Subcat2.create({ name: "Umbrella", subcat1_id: 21})
 Subcat2.create({ name: "Ties", subcat1_id: 21})
+
+Item.create({
+  Finance.buyer_pmt: 1,
+  Finance.procure_cost: 20,
+  description: "green velvet couch"
+  category_id: 1,
+  subcat1_id: 4,
+  subcat2_id: 27
+  })
