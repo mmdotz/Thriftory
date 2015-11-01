@@ -27,10 +27,13 @@
     <%= f.label :pre_sale_cost %><br>
     <%= f.number_field :pre_sale_cost %>
   </div>
+
+  <% if @item.status == "sold" %>
   <div class="field">
     <%= f.label :buyer_pmt %><br>
     <%= f.number_field :buyer_pmt %>
   </div>
+  <% end %>
   <div class="field">
     <%= f.label :item_id %><br>
     <%= f.text_field :item_id %>
