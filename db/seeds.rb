@@ -219,11 +219,17 @@ Subcat2.create({ name: "Hats & Wigs", subcat1_id: 21})
 Subcat2.create({ name: "Umbrella", subcat1_id: 21})
 Subcat2.create({ name: "Ties", subcat1_id: 21})
 
-Item.create({
-  Finance.buyer_pmt: 1,
-  Finance.procure_cost: 20,
-  description: "green velvet couch"
-  category_id: 1,
-  subcat1_id: 4,
-  subcat2_id: 27
-  })
+item = Item.create({
+  description:  "green velvet couch",
+  category_id:  1,
+  subcat1_id:   4,
+  subcat2_id:   27,
+  status:       "ready for sale",
+  condition:    "good",
+  source_id:    2
+})
+item.finances.create({
+  buyer_pmt:      0,
+  procure_cost:   20,
+  pre_sale_cost:  5,
+  pre_sale_notes: "repair ripped seam on 3rd cushion"})
