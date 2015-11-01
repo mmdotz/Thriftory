@@ -219,17 +219,156 @@ Subcat2.create({ name: "Hats & Wigs", subcat1_id: 21})
 Subcat2.create({ name: "Umbrella", subcat1_id: 21})
 Subcat2.create({ name: "Ties", subcat1_id: 21})
 
+status        = ["ready for sale", "listed", "sold", "in storage"]
+condition     = ["good", "fair", "damaged", "new", "excellent"]
+source        = [1,2,3,4]
+procure_cost  = [12,45,67,9,13,82,7,1,4,10]
+pre_sale_cost = [1,0.50,2,0.75,10,5,3,20]
+storage_loc   = ["attic 5", "garage 4", "shed 1", "master 12", "closet 6"]
+shipping      = ["free", "buyer", "pick up"]
+qty           = [1,2]
+
+
+
 item = Item.create({
   description:  "green velvet couch",
   category_id:  1,
   subcat1_id:   4,
   subcat2_id:   27,
-  status:       "ready for sale",
-  condition:    "good",
-  source_id:    2
+  storage_loc:  storage_loc.sample,
+  status:       status.sample,
+  condition:    condition.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample,
+  source_id:    source.sample
 })
 item.finances.create({
-  buyer_pmt:      0,
-  procure_cost:   20,
-  pre_sale_cost:  5,
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
   pre_sale_notes: "repair ripped seam on 3rd cushion"})
+
+item1 = Item.create({
+  description:  "knit pants women's size 4 green elastic waist",
+  category_id:  2,
+  subcat1_id:   6,
+  subcat2_id:   28,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item1.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: "fix button"})
+
+item2 = Item.create({
+  description:  "floor lamp halogen no bulb black and gold",
+  category_id:  3,
+  subcat1_id:   13,
+  subcat2_id:   65,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item2.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: "replace bulb"})
+
+item3 = Item.create({
+  description:  'wig blonde 15" curly',
+  category_id:  4,
+  subcat1_id:   21,
+  subcat2_id:   105,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item3.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: "brush before display"})
+
+  item4 = Item.create({
+    description:  'wig blonde 15" curly',
+    category_id:  4,
+    subcat1_id:   21,
+    subcat2_id:   105,
+    status:       status.sample,
+    condition:    condition.sample,
+    source_id:    source.sample,
+    storage_loc:  storage_loc.sample,
+    shipping:     shipping.sample,
+    quantity:     qty.sample
+  })
+  item4.finances.create({
+    procure_cost:   procure_cost.sample,
+    pre_sale_cost:  pre_sale_cost.sample,
+    shipping_cost: 0,
+    pre_sale_notes: "brush before display"})
+
+item5 = Item.create({
+  description:  'bookcase oak veneer ikea 4 shelf',
+  category_id:  1,
+  subcat1_id:   4,
+  subcat2_id:   17,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item5.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: ""})
+
+item6 = Item.create({
+  description:  'costume darth vader black mens size small',
+  category_id:  2,
+  subcat1_id:   7,
+  subcat2_id:   32,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item6.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: "dry clean first"})
+
+item7 = Item.create({
+  description:  'flute silver 1957 culver',
+  category_id:  4,
+  subcat1_id:   20,
+  subcat2_id:   100,
+  status:       status.sample,
+  condition:    condition.sample,
+  source_id:    source.sample,
+  storage_loc:  storage_loc.sample,
+  shipping:     shipping.sample,
+  quantity:     qty.sample
+})
+item7.finances.create({
+  procure_cost:   procure_cost.sample,
+  pre_sale_cost:  pre_sale_cost.sample,
+  shipping_cost: 0,
+  pre_sale_notes: "polish first"})
