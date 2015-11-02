@@ -17,21 +17,20 @@
     <p> new categories trigger creation of subcats</p>
   </div>
 
-    <%= f.fields_for :subcat1s do |p| %>
+  <%= f.fields_for :subcat1s do |sc| %>
+    <div class="field">
+      <%= sc.label "Subcategory 1 name" %><br>
+      <%= sc.text_field :name %>
+    </div>
+
+    <%= sc.fields_for :subcat2s do |sc2| %>
       <div class="field">
-        <%= p.label "Subcategory 1 name" %><br>
-        <%= p.text_field :name %>
+        <%= sc2.label "Subcategory 2 name" %><br>
+        <%= sc2.text_field :name %>
       </div>
     <% end %>
+  <% end %>
 
-      <%= f.fields_for :subcat2s do |p| %>
-        <%= p.fields_for :subcat2s do |g| %>
-          <div class="field">
-            <%= g.label "Subcategory 2 name" %><br>
-            <%= g.text_field :name %>
-          </div>
-        <% end %>
-      <% end %>
 
   <div class="actions">
     <%= f.submit %>

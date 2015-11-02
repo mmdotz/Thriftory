@@ -15,7 +15,6 @@ class Subcat1sController < ApplicationController
   # GET /subcat1s/new
   def new
     @subcat1 = Subcat1.new
-    @subcat1.subcat2s.new
 
   end
 
@@ -71,6 +70,6 @@ class Subcat1sController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subcat1_params
-      params.require(:subcat1).permit(:name, :category_id, subcat2s_attributes: [:name])
+      params.require(:subcat1).permit(:name, :category_id)
     end
 end
