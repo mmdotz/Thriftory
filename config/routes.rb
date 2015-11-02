@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/items.csv', to: 'items#index', as: 'items_export'
   get '/update_subcat1', to: 'items#update_subcat1', as: 'subcategory1'
   get '/update_subcat2', to: 'items#update_subcat2', as: 'subcategory2'
+  get 'login', to: 'sessions#new', as: 'login'
 
 
   root 'homes#index'

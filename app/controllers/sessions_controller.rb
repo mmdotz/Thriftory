@@ -5,7 +5,7 @@ skip_before_filter :authenticate_user
   end
 
   def create #a session
-    @user = User.find_by_name(params[:name])
+    @user = User.find_by_email(params[:email])
     if @user.present? && @user.authenticate(params[:password])
       set_user_session(@user)
       redirect_to items_path, notice: "Successful log-in"
