@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @photo.name %>
+  <strong>Photo:</strong>
+  <%= @photo.id %>
+  <%= image_tag attachment_url(@photo, :image, :fill, 900, 300, format: :png) %>
 </p>
 
 <p>
   <strong>Item:</strong>
-  <%= @photo.item %>
+  <!-- <%#@photo.item.description %> -->
 </p>
 
+
+<%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete', photo_path(@photo) %> |
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

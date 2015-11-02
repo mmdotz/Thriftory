@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     @item.finances.new
     @categories = Category.all
     @subcat1s   = []
-    @subcat2s   = Subcat2.all
+    @subcat2s   = []
   end
 
   def update_subcat1
@@ -43,6 +43,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
+    @subcat1s   = []
+    @subcat2s   = Subcat2.all
   end
 
   def create

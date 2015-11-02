@@ -1,3 +1,4 @@
+<!-- Item show-->
 
 <p>
   <strong>Description:</strong>
@@ -50,10 +51,19 @@
   <% end %>
 </p>
 
+<p> Click on a photo to view or delete it. Each photo show page has delete link. Remove link for see larger.
   <strong>Picture:</strong>
-  <%= @item.photo %>
+  <%= image_tag attachment_url(@item.photos.last, :image, :fill, 30, 30, format: :jpg) %>
+  <%= link_to 'See larger', @item.photos.last %>
 </p>
-
-<%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class='photos'>
+  <% @item.photos.each do |photo| %>
+    <%= link_to photo do %>
+      <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
+<%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

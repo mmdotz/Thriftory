@@ -17,8 +17,7 @@ var Search = React.createClass({
       dataType: 'JSON',
       method: 'GET'
     }).done(function (response) {
-
-//change state from empty to return all items
+      //change state from empty to return all items
       this.setState({
         all_items: response,
         filtered_items: response
@@ -60,7 +59,7 @@ var Search = React.createClass({
                     <td>{ item.storage_loc }</td>
                     <td>{ item.status }</td>
                     <td>{ item.source.name }</td>
-                    <td><img src={ item.photo_url } /></td> 
+                    <td><img src={ item.photo_url } /></td>
                   </tr>
                 );
               })}

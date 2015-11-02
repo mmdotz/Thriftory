@@ -1,8 +1,8 @@
 class Item < ActiveRecord::Base
   belongs_to  :source
   belongs_to  :subcat2
-  has_many    :finances
-  has_many    :photos
+  has_many    :finances, dependent: :destroy
+  has_many    :photos, dependent: :destroy
 
   accepts_nested_attributes_for :finances
   validates_associated          :finances
@@ -24,7 +24,7 @@ class Item < ActiveRecord::Base
   # see Item controller index action for use
 
   def photo_url
-    ActionController::Base.helpers.attachment_url(self, :photo, :fill, 50, 50, format: :jpg)
+    ActionController::Base.helpers.attachment_url(self.photos.last, :image, :fill, 50, 50, format: :jpg)
   end
 
 

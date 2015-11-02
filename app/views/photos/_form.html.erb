@@ -10,15 +10,13 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-
-    <p><strong>Photo for Item # </strong><%= f.label Item.last.id %></p>
-    <%= f.text_field :item_id %>
+    <p><strong>Photo for Item #<%= @item.id %></strong><%= f.label @item.description %></p>
   </div>
   <div class="field">
+    <%= f.hidden_field :item_id, value: @item.id %>
     <%= f.label "Image upload" %><br>
-    <%= f.attachment_field :image_id, direct: true %>
+    <%= f.attachment_field :image, direct: true %>
     <!--immediate file upload, don't wait for submit -->
   </div>
   <div class="actions">
