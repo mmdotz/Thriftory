@@ -24,7 +24,7 @@ class Item < ActiveRecord::Base
   # see Item controller index action for use
 
   def photo_url
-    ActionController::Base.helpers.attachment_url(self.photos.last, :image, :fill, 50, 50, format: :jpg)
+    ActionController::Base.helpers.attachment_url(self.photos.first, :image, :fill, 50, 50, format: :jpg)
   end
 
 

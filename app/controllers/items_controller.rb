@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
   def update_subcat1
     category = Category.find(params[:category_id])
     @subcat1s = category.subcat1s.map{ |x| [x.name, x.id] }.insert(0, "Select a 1st Subcategory")
-    # @subcat2s = category.subcat2s.map{ |y| [y.name, y.id] }  why is this neces?
   end
 
   def update_subcat2
@@ -44,8 +43,8 @@ class ItemsController < ApplicationController
 
   def edit
     @categories = Category.all
-    @subcat1s   = []
-    @subcat2s   = Subcat2.all
+    @subcat1s   = @item.subcat2.subcat1.category.subcat1s
+    @subcat2s   = @item.subcat2.subcat1.subcat2s
   end
 
   def create

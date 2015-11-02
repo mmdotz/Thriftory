@@ -53,8 +53,8 @@
 
 <p> Click on a photo to view or delete it. Each photo show page has delete link. Remove link for see larger.
   <strong>Picture:</strong>
-  <%= image_tag attachment_url(@item.photos.last, :image, :fill, 30, 30, format: :jpg) %>
-  <%= link_to 'See larger', @item.photos.last %>
+  <%= image_tag attachment_url(@item.photos.first, :image, :fill, 30, 30, format: :jpg) %>
+  <%= link_to 'See larger', @item.photos.first %>
 </p>
 <div class='photos'>
   <% @item.photos.each do |photo| %>
