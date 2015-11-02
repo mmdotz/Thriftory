@@ -4,7 +4,6 @@
         url: '/update_subcat1',
         data: {
           category_id : $('#categories_select').val()
-          //return the filtered @subcat1s here how?
         },
         dataType: "script"
       });

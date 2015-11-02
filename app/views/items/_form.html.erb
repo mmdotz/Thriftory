@@ -15,16 +15,15 @@
     <% end %>
 
     <div class="field">
-      <%= collection_select(@item, :category_id,  @categories,  :id, :name,
-      {:prompt   => "Select a Category"}, {:id => 'categories_select'}) %>
+      <%= f.select :category_id, options_from_collection_for_select(@categories,
+        :id, :name), { prompt: 'Select a Category'}, { id: 'categories_select' } %>`
+    <div class="field">
+      <%= f.select :subcat1_id, options_from_collection_for_select(@subcat1s,
+       :id, :name), { prompt: 'Select 1st Subcategory'}, { id: 'subcat1s_select' } %>`
     </div>
     <div class="field">
-      <%= collection_select(@item, :subcat1_id, @subcat1s, :id, :name,
-      {:prompt   => "Select 1st SubCategory"}, {:id => 'subcat1s_select'}) %>
-    </div>
-    <div class="field">
-      <%= collection_select(@item, :subcat2_id, @subcat2s, :id, :name,
-      {:prompt   => "Select 2nd SubCategory"}, {:id => 'subcat2s_select'}) %>
+      <%= f.select :subcat2_id, options_from_collection_for_select(@subcat2s,
+       :id, :name), { prompt: 'Select 2nd Subcategory'}, { id: 'subcat2s_select' } %>`
     </div>
 
     <div class="field">
@@ -87,3 +86,4 @@
     </div>
   <% end %>
 </div>
+<%= params.inspect %>

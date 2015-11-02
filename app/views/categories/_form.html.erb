@@ -12,10 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "Category name" %><br>
     <%= f.text_field :name %>
+    <p> new categories trigger creation of subcats</p>
   </div>
-  <p> new categories should trigger creation of subcats</p>
+
+    <%= f.fields_for :subcat1s do |p| %>
+      <div class="field">
+        <%= p.label "Subcategory 1 name" %><br>
+        <%= p.text_field :name %>
+      </div>
+    <% end %>
+
+    
+
 
   <div class="actions">
     <%= f.submit %>
