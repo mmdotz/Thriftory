@@ -12,12 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+    <p><strong>Photo for Item # </strong><%= f.label Item.last.id %></p>
+    <%= f.text_field :item_id %>
   </div>
   <div class="field">
-    <%= f.label :item_id %><br>
-    <%= f.text_field :item_id %>
+    <%= f.label "Image upload" %><br>
+    <%= f.attachment_field :image_id, direct: true %>
+    <!--immediate file upload, don't wait for submit -->
   </div>
   <div class="actions">
     <%= f.submit %>

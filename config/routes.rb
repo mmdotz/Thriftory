@@ -26,11 +26,13 @@ Rails.application.routes.draw do
     resources :finances
   end
 
-  get '/home',   to: 'homes#index',    as: 'home'
-  get '/items.csv', to: 'items#index', as: 'items_export'
+  get '/home',           to: 'homes#index',    as: 'home'
+  get '/items.csv',      to: 'items#index', as: 'items_export'
   get '/update_subcat1', to: 'items#update_subcat1', as: 'subcategory1'
   get '/update_subcat2', to: 'items#update_subcat2', as: 'subcategory2'
-  get 'login', to: 'sessions#new', as: 'login'
+  get '/login',           to: 'sessions#new', as: 'login'
+  post '/login',         to: 'sessions#create',  as: 'create_session'
+  get 'logout',          to: 'sessions#destroy', as: 'logout'
 
 
   root 'homes#index'
