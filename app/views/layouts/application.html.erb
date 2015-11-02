@@ -8,7 +8,9 @@
 </head>
 <body>
 <%= react_component("Navigation") %>
+<% if user_logged_in? %>
 <%= current_user.username %> is logged in.
+<% end %>
 
 <%= yield %>
 
