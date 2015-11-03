@@ -31,9 +31,12 @@ Logo to the right, link to Home
 <p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
 <p>Total expenses: <%= Finance.all.map { |finance| finance.item_total_outlay }.sum %> </p>
 
-<!--can't do below until there are categories in items -->
-<!-- <%# bar_chart Category.group(:name).sum(@finances.buyer_pmt) %> -->
 <p>Value per category</p>
+<%= Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
+}.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }] %><br>
+
+
+<%= Category.find(4).finances.map{ |f| f.procure_cost }.sum %>
 
 
 <% if Finance.total_profit? %>

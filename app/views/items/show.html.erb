@@ -50,18 +50,26 @@
     <% end %>
   <% end %>
 </p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
-<p> Click on a photo to view or delete it. Each photo show page has delete link. Remove link for see larger.
-  <strong>Picture:</strong>
-  <%= image_tag attachment_url(@item.photos.first, :image, :fill, 30, 30, format: :jpg) %>
-  <%= link_to 'See larger', @item.photos.first %>
-</p>
-<div class='photos'>
-  <% @item.photos.each do |photo| %>
-    <%= link_to photo do %>
-      <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
-    <% end %>
-  <% end %>
+<div class="modal fade bs-example-modal-lg" id="photoModal" "tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <p> Click on a photo to view or delete it. Each photo show page has delete link. Remove link for see larger.
+        <strong>Picture:</strong>
+        <%= image_tag attachment_url(@item.photos.first, :image, :fill, 30, 30, format: :jpg) %>
+        <%= link_to 'See larger', @item.photos.first %>
+      </p>
+      <div class='photos'>
+        <% @item.photos.each do |photo| %>
+          <%= link_to photo do %>
+            <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
 </div>
 <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
 <%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |

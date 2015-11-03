@@ -17,7 +17,7 @@
       <tr>
         <td><%= source.id %></td>
         <td><%= source.name %></td>
-        <td><%= source.date %></td>
+        <td><%= source.date.strftime("%B %d, %Y") %></td>
         <td><%= source.address %></td>
         <td><%= source.type_of %></td>
         <td><%= link_to 'Show', source %></td>
