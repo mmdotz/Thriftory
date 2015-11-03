@@ -3,17 +3,25 @@
 Logo to the right, link to Home
 
 
-<h1>Today's Stats</h1>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Stats for <%= Time.now.strftime("%B %d, %Y") %></h4>
+      </div>
+      <div class="modal-body">
+        <h3> Total items in inventory: <%= @inventory %> </h3>
+        <h3> Total items added this week: <%= total_week_items %> </h3>
+        <h3> Something else </h3>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<td><%= link_to 'Customize report - to be built',finances_path, class: "btn btn-default" %></td>
 
-<h2> <%= Time.now.strftime("%B %d, %Y") %></h2>
-<h3> Total items in inventory: <%= @inventory %> </h3>
-<h3> Total items added this week: <%= total_week_items %> </h3>
-
-<td><%= link_to 'Customize report - do this',finances_path, class: "btn btn-default" %></td>
-
-<!--Loads wayyyy slow -->
 <p> Items by status</p>
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>
@@ -23,9 +31,8 @@ Logo to the right, link to Home
 <p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
 <p>Total expenses: <%= Finance.all.map { |finance| finance.item_total_outlay }.sum %> </p>
 
-<!--can't do below until there are categoriesin items
-<%# bar_chart Item.group(:category).sum(:buyer_pmt) %>
--->
+<!--can't do below until there are categories in items -->
+<!-- <%# bar_chart Category.group(:name).sum(@finances.buyer_pmt) %> -->
 <p>Value per category</p>
 
 

@@ -3,6 +3,7 @@ class StatsController < ApplicationController
     @items = Item.all
     @inventory = @items.count
     @item = Item.last
+    @finances = Finance.all
   end
 
   def show

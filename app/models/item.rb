@@ -27,5 +27,8 @@ class Item < ActiveRecord::Base
     ActionController::Base.helpers.attachment_url(self.photos.first, :image, :fill, 50, 50, format: :jpg)
   end
 
+  def sum_total_outlay
+    self.finances.map { |f| f.item_total_outlay }.sum
+  end
 
 end
