@@ -1,12 +1,26 @@
 .login {
   background-image: url("Thriftorylogin.png");
   background-size: cover;
+  color: #E9AE5A;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  font-family: 'Satisfy', cursive;
 }
 
 .logo {
+  padding-top: 30px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.shadow {
+  background: rgba(50, 50, 50, 0.4);
+}
+
+h1 {
+  padding-top: 100px;
+
 }
 
 .form-signin {
@@ -14,10 +28,14 @@
   padding: 15px;
   margin: 0 auto;
 }
+
+.form-signin-heading {
+  color: #eee;
+}
+
 .form-signin .form-signin-heading,
 .form-signin {
   margin-bottom: 10px;
-  color: #eee;
 }
 
 .form-signin .form-control {

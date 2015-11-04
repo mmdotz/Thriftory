@@ -11,6 +11,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="icon" href="../../favicon.ico">
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -27,11 +28,13 @@
     <![endif]-->
   </head>
   <body>
-
-    <%= react_component("Navigation") %>
-    <% if user_logged_in? %>
-    <%= current_user.username %> is logged in.
+    <% unless SessionsController %>
+      <%= react_component("Navigation") %>
     <% end %>
+    <% if user_logged_in? %>
+    Welcome, <%= current_user.username %>
+    <% end %>
+
     <%= yield %>
 
   </body>

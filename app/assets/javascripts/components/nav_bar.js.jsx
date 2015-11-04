@@ -14,8 +14,6 @@ var Navigation = React.createClass({
               <li><a href='/sources'>Sources</a></li>
               <li><a href='/stats/index'>Stats</a></li>
               <li><a href='/finances'>Costs</a></li>
-
-
             </ul>
           </div>
         </div>

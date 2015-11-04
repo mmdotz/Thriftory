@@ -1,7 +1,10 @@
 <div class="login">
+  <section class="shadow">
+  <h1>Thriftory</h1>
   <%= image_tag("saletag.png", class:"logo", :alt => "logo", height:'200', width: '200') %>
+
   <%= form_tag login_path, class: "form-signin" do %>
-    <h2 class="form-signin-heading">Please sign in</h2>
+    <h3 class="form-signin-heading">Please sign in</h3>
 
     <label for="inputEmail" class="sr-only"></label>
     <%= text_field_tag :email, '', class: 'form-control', id: 'inputEmail', placeholder: 'Email Address', required: true %>
@@ -13,4 +16,5 @@
     <%= link_to('Add new account', new_user_path, class: 'btn btn-lg btn-warning btn-block') %>
 
   <% end %>
+  </section>
 </div>
