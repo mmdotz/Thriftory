@@ -1,9 +1,9 @@
 
-$(document).ready(function() {
+$(document).onclick(function() {
     $('#myModal').modal('show');
 });
 
 //I want these to happen when the button is pressed
-$(document).ready(function(){
-   $('#photoModal').modal();
- });
+// $(document).ready(function(){
+//    $('#photoModal').modal();
+//  });

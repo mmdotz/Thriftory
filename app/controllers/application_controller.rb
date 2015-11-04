@@ -27,5 +27,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :user_logged_in?
   helper_method :total_week_items
+  helper_method :item_profit
 
 end

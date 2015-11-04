@@ -28,7 +28,7 @@
     <![endif]-->
   </head>
   <body>
-    <% unless SessionsController %>
+    <% unless controller_name == "sessions" || controller_name == "homes" %>
       <%= react_component("Navigation") %>
     <% end %>
     <% if user_logged_in? %>
