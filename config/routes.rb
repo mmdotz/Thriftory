@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :photos
   resources :subcat2s
   resources :subcat1s
-  resources :categories
+  resources :categories do
+    member do
+      get 'items'
+    end
+  end
   resources :finances
   resources :items
   resources :sources
@@ -35,5 +39,5 @@ Rails.application.routes.draw do
   get 'logout',          to: 'sessions#destroy', as: 'logout'
 
 
-  root 'homes#index'
+  root 'sessions#new'
 end

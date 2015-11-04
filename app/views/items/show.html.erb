@@ -2,7 +2,7 @@
 <br>
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> -->
 
-<div class="modal fade bs-example-modal-lg" id="photoModal" "tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade bs-example-modal-lg" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <strong>Picture:</strong>
@@ -25,29 +25,11 @@
       <%= image_tag attachment_url(@item.photos.first, :image, :fill, 400, 400, format: :jpg) %>
       <p> Click on a photo to view or delete it. Add delete action to each modal pop</p>
     </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3 col-md-offset-1" id="photos">
-      <% @item.photos.each do |photo| %>
-        <%= link_to photo do %>
-          <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
-  <div class="row">
     <div class="col-md-4 col-md-offset-1" id="item_attr">
       <ul>
         <li><strong>Description:</strong><%= @item.description %></li>
         <li><strong>Quantity:</strong><%= @item.quantity %></li>
-        <li><strong>Storage loc:</strong><%= @item.storage_loc %></li>
+        <li><strong>Storage spot:</strong><%= @item.storage_loc %></li>
         <li><strong>Status:</strong><%= @item.status %></li>
         <li><strong>Condition:</strong><%= @item.condition %></li>
         <li><strong>Source:</strong><%= @item.source.name %><li>
@@ -67,6 +49,15 @@
             <% end %>
           <% end %>
         <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col-md-3 col-md-offset-1" id="photos">
+      <% @item.photos.each do |photo| %>
+        <%= link_to photo do %>
+          <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |

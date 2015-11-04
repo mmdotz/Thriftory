@@ -1,6 +1,6 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-Logo to the right, link to Home
+<p>Logo to the right, link to Home</p>
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -18,9 +18,6 @@ Logo to the right, link to Home
     </div>
   </div>
 </div>
-
-
-<td><%= link_to 'Customize report - to be built',finances_path, class: "btn btn-default" %></td>
 
 <p> Items by status</p>
 <%= pie_chart Item.group(:status).count %>

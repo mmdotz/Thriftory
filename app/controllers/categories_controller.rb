@@ -10,7 +10,10 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+  end
 
+  def items
+    @category_items = Item.where(category_id: params[:id])
   end
 
   # GET /categories/new

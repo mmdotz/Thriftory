@@ -1,24 +1,40 @@
-<h3>Categories</h3>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-keep id for dev only
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.id %></td>
-        <!--link to item.where(category_id: [:params_id])-->
-        <td><%= link_to category.name, categories_path %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <h3>Choose a category to search</h3>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1"
+      <%= link_to 'Furniture (1)', items_category_path(1) %>
+    </div>
+    <div class="col-md-2 col-md-offset-1"
+      <%= link_to 'Clothing (2)', items_category_path(2) %>
+    </div>
+    <div class="col-md-2 col-md-offset-1"
+      <%= link_to 'Household + Decor (3)', items_category_path(3) %>
+    </div>
+    <div class="col-md-2 col-md-offset-1"
+      <%= link_to 'Other (4)', items_category_path(4) %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-3">
+      <%= link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
+    </div>
+    <div class="col-md-3 col-md-offset-2">
+      <%= link_to 'View all Items in inventory', items_path, class: "btn btn-default" %>
+    </div>
+  </div>
+  </div>
+</div>
 
-<br>
-or
-<%= link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
+
+<!-- Justin's code
+<div class="container">
+  <h3>Choose a category to search</h3>
+      <% Category.all.each do |category| %>
+        <%# link_to "#{category.name} (#{category.id})", items_category_path(category) %>
+      <% end %>
+    </div>
+  </div>
+  <%# link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
+  <%# link_to 'View all Items in inventory', items_path,class: "btn btn-default" %>
+</div> -->
