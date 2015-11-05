@@ -1,0 +1,19 @@
+
+
+<%= @category %>
+<div class="container">
+  <div class="row">
+    <% @category_items.each do |catitem| %>
+      <div class="col-md-3" id="itemblock">
+        <div class="photo">
+          <%= image_tag attachment_url(catitem.photos.first, :image, :fill, 250, 250, format: :jpg) %>
+        </div>
+        <div class="photobody">
+          <%= catitem.description.titleize %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  <%= will_paginate @category_items, renderer: BootstrapPagination::Rails if @category_items.count < 9 %>

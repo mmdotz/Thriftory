@@ -64,7 +64,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    Faker::Address.street_address << " Boston, MA, 02108",
   type_of:    "Flea Market",
-  user_id:    1,
+  user_id:    2,
   latitude:
   longitude:
   })
@@ -74,7 +74,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    "unknown",
   type_of:    "Craigslist",
-  user_id:    1,
+  user_id:    2,
   latitude:
   longitude:
   })
