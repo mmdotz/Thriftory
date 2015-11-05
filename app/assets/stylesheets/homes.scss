@@ -10,3 +10,20 @@
 .home_page h3 {
   font-family: 'Satisfy', cursive;
 }
+
+.icon-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px;
+
+  .icon {
+    font-size: 5em;
+    text-align: center;
+  }
+
+  .icon-body {
+    font-weight: bold;
+    // font-family: 'Satisfy', cursive;
+
+  }
+}

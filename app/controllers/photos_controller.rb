@@ -29,8 +29,8 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
+        format.html { redirect_to :back, notice: 'Photo was successfully created.' }
+        format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
