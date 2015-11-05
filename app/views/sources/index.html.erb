@@ -1,33 +1,34 @@
-<h1>Listing Sources</h1>
+<div class="container">
+  <h1>Sources + Vendors</h1>
+  <table class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Address</th>
+          <th>Type</th>
+          <th>Mileage One way</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Address</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sources.each do |source| %>
-      <tr>
-        <td><%= source.id %></td>
-        <td><%= source.name %></td>
-        <td><%= source.date.strftime("%B %d, %Y") %></td>
-        <td><%= source.address %></td>
-        <td><%= source.type_of %></td>
-        <td><%= link_to 'Show', source %></td>
-        <td><%= link_to 'Edit', edit_source_path(source) %></td>
-        <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Source', new_source_path %>
+      <tbody>
+        <% @sources.each do |source| %>
+          <tr>
+            <td><%= source.id %></td>
+            <td><%= source.name %></td>
+            <td><%= source.date.strftime("%B %d, %Y") %></td>
+            <td><%= source.address %></td>
+            <td><%= source.type_of %></td>
+            <td><%=  1  %></td>
+            <td><%= link_to 'Edit', edit_source_path(source) %></td>
+            <td><%= link_to 'Delete', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody
+    </table>
+  </table>
+<%= link_to 'Add a New Source', new_source_path, class: 'btn btn-warning' %>
+</div>

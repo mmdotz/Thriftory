@@ -7,5 +7,6 @@ Inventory app for Thrifters
 - Mandrill?
 - Bootstrap
 - Faker
-- Kaminari?
+- Will_paginate?
 - Chartkick
+- Geocoder
