@@ -29,7 +29,9 @@
   </head>
   <body>
     <% unless controller_name == "sessions" || controller_name == "homes" %>
+    <div class="navibar">
       <%= react_component("Navigation") %>
+    </div>
     <% end %>
 
     <%= yield %>
