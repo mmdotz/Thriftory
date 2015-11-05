@@ -1,16 +1,20 @@
 <div class="container">
   <h3>Choose a category to search</h3>
   <div class="row">
-    <div class="col-md-2 col-md-offset-1"
+    <div class="col-md-2 col-md-offset-1">
+      <%= image_tag 'sofa', height: '200', width: '200' %>
       <%= link_to 'Furniture (1)', items_category_path(1) %>
     </div>
-    <div class="col-md-2 col-md-offset-1"
+    <div class="col-md-2 col-md-offset-1">
+      <%= image_tag 'clothes', height: '200', width: '200' %>
       <%= link_to 'Clothing (2)', items_category_path(2) %>
     </div>
-    <div class="col-md-2 col-md-offset-1"
+    <div class="col-md-2 col-md-offset-1">
+      <%= image_tag 'household', height: '200', width: '200' %>
       <%= link_to 'Household + Decor (3)', items_category_path(3) %>
     </div>
-    <div class="col-md-2 col-md-offset-1"
+    <div class="col-md-2 col-md-offset-1">
+      <%= image_tag 'vase', height: '200', width: '200' %>
       <%= link_to 'Other (4)', items_category_path(4) %>
     </div>
   </div>
