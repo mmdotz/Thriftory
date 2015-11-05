@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def index
-    @inventory = Item.all.count
+    @inventory = current_user.items
   end
 
 end

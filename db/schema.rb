@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20151105163455) do
     t.integer  "procure_cost",   default: 0
     t.integer  "shipping_cost",  default: 0
     t.string   "pre_sale_notes"
-    t.integer  "pre_sale_cost",  default: 0
-    t.integer  "buyer_pmt",      default: 0
+    t.integer  "pre_sale_cost",             default: 0
+    t.integer  "buyer_pmt",                 default: 0
     t.integer  "item_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20151105163455) do
     t.string   "condition",               default: "good"
     t.integer  "source_id"
     t.integer  "subcat2_id"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "photo_id"
     t.integer  "category_id"
     t.integer  "subcat1_id"

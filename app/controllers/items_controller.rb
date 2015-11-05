@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = current_user.items
 
     #in Item model, created helper method to tell attachment method which object
     #we are passing in for refile upload

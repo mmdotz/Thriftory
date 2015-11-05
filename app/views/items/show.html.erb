@@ -14,6 +14,10 @@
             <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
           <% end %>
         <% end %>
+        <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
+        <%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Edit', edit_item_path(@item) %> |
+        <%= link_to 'Back', items_path %>
       </div>
     </div>
   </div>
@@ -22,27 +26,31 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4 col-md-offset-1" id="firstphoto">
-      <%= image_tag attachment_url(@item.photos.first, :image, :fill, 400, 400, format: :jpg) %>
-      <p> Click on a photo to view or delete it. Add delete action to each modal pop</p>
+      <% if @item.photos.empty? %>
+        <%= link_to 'Add photos', new_photo_path(item_id: params[:id]), class: "btn btn-default" %>
+      <% else %>
+        <%= image_tag attachment_url(@item.photos.first, :image, :fill, 400, 400, format: :jpg) %>
+        <p> Click on a photo to view or delete it. Add delete action to each modal pop</p>
+      <% end %>
     </div>
     <div class="col-md-4 col-md-offset-1" id="item_attr">
       <ul>
-        <li><strong>Description:</strong><%= @item.description %></li>
-        <li><strong>Quantity:</strong><%= @item.quantity %></li>
-        <li><strong>Storage spot:</strong><%= @item.storage_loc %></li>
-        <li><strong>Status:</strong><%= @item.status %></li>
-        <li><strong>Condition:</strong><%= @item.condition %></li>
-        <li><strong>Source:</strong><%= @item.source.name %><li>
-        <li><strong>Buyer Pmt:</strong><% @item.finances.each do |finance| %>
+        <li><strong>Description: </strong><%= @item.description %></li>
+        <li><strong>Quantity: </strong><%= @item.quantity %></li>
+        <li><strong>Storage spot: </strong><%= @item.storage_loc %></li>
+        <li><strong>Status: </strong><%= @item.status %></li>
+        <li><strong>Condition: </strong><%= @item.condition %></li>
+        <li><strong>Source: </strong><%= @item.source.name %><li>
+        <li><strong>Buyer Pmt: $</strong><% @item.finances.each do |finance| %>
           <%= finance.buyer_pmt %></li>
         <% end %>
 
         <% if @item.status.downcase == "sold" %>
-          <li><strong>Shipping:</strong>
+          <li><strong>Shipping: </strong>
           <%= @item.shipping %></li><br>
           <% @item.finances.each do |finance| %>
             <% if @item.shipping.downcase == "free" %>
-              <li><strong>Shipping paid:</strong>
+              <li><strong>Shipping paid: $</strong>
               <%= finance.shipping_cost %></li><br>
               <li><strong>Sold for : $</strong>
               <%= finance.buyer_pmt %></li>
@@ -60,8 +68,4 @@
       <% end %>
     </div>
   </div>
-  <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
-  <%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
-  <%= link_to 'Edit', edit_item_path(@item) %> |
-  <%= link_to 'Back', items_path %>
 </div>

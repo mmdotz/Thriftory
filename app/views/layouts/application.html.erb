@@ -31,9 +31,7 @@
     <% unless controller_name == "sessions" || controller_name == "homes" %>
       <%= react_component("Navigation") %>
     <% end %>
-    <% if user_logged_in? %>
-    Welcome, <%= current_user.username %>
-    <% end %>
+
     <%= yield %>
   </body>
 </html>

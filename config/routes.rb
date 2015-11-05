@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get '/update_subcat2', to: 'items#update_subcat2', as: 'subcategory2'
   get '/login',           to: 'sessions#new', as: 'login'
   post '/login',         to: 'sessions#create',  as: 'create_session'
-  get 'logout',          to: 'sessions#destroy', as: 'logout'
+  get '/logout',          to: 'sessions#destroy', as: 'logout'
 
 
   root 'sessions#new'
