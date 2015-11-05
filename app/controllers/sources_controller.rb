@@ -5,6 +5,7 @@ class SourcesController < ApplicationController
   # GET /sources.json
   def index
     @sources = Source.all
+    @user = current_user
   end
 
   # GET /sources/1
@@ -28,7 +29,7 @@ class SourcesController < ApplicationController
 
     respond_to do |format|
       if @source.save
-        format.html { redirect_to @source, notice: 'Source was successfully created.' }
+        format.html { redirect_to sources_path, notice: 'Source was successfully created.' }
         format.json { render :show, status: :created, location: @source }
       else
         format.html { render :new }
@@ -42,8 +43,9 @@ class SourcesController < ApplicationController
   def update
     respond_to do |format|
       if @source.update(source_params)
-        format.html { redirect_to @source, notice: 'Source was successfully updated.' }
+        format.html { redirect_to sources_path, notice: 'Source was successfully updated.' }
         format.json { render :show, status: :ok, location: @source }
+
       else
         format.html { render :edit }
         format.json { render json: @source.errors, status: :unprocessable_entity }
@@ -69,6 +71,6 @@ class SourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
-      params.require(:source).permit(:name, :date, :address, :type_of)
+      params.require(:source).permit(:name, :date, :address, :type_of, :latitude, :longitude)
     end
 end

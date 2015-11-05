@@ -9,7 +9,10 @@
 user = User.new({
   username:   "Joanne",
   email:      "jh@example.com",
-  admin:      true
+  admin:      true,
+  address:    "33 Leroy Drive, Riverside, RI 02915",
+  latitude:
+  longitude:
   })
   user.password = "password"
   user.save!
@@ -17,7 +20,10 @@ user = User.new({
 user = User.new({
   username:   "Jayson",
   email:      "jd@example.com",
-  admin:      false
+  admin:      false,
+  address:    "337 Maple Street, New Bedford, MA 02740"
+  latitude:
+  longitude:
   })
   user.password = "password"
   user.save!
@@ -25,7 +31,10 @@ user = User.new({
 user = User.new({
   username:   "Annika",
   email:      "ayd@example.com",
-  admin:      true
+  admin:      true,
+  address:    "164 Angell Street, Providence, RI 02912"
+  latitude:
+  longitude:
   })
   user.password = "password"
   user.save!
@@ -33,33 +42,41 @@ user = User.new({
 Source.create({
   name:       "unknown",
   date:       Faker::Date.between(2.years.ago, Date.today),
-  address:    Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
+  address:    Faker::Address.street_address << " Taunton, MA, 02780",
   type_of:    "Yard Sale",
-  user_id:    2
+  user_id:    2,
+  latitude:
+  longitude:
   })
 
 Source.create({
-  name:     "Betty Sue Filmore",
-  date:     Faker::Date.between(2.years.ago, Date.today),
-  address:  Faker::Address.street_address << " Taunton, MA, " << Faker::Address.zip,
-  type_of:     "Estate Sale",
-  user_id:    2
+  name:       "Betty Sue Filmore",
+  date:       Faker::Date.between(2.years.ago, Date.today),
+  address:    Faker::Address.street_address << " Taunton, MA, 02780",
+  type_of:    "Estate Sale",
+  user_id:    2,
+  latitude:
+  longitude:
   })
 
 Source.create({
-  name:     "Jim's Gems",
-  date:     Faker::Date.between(2.years.ago, Date.today),
-  address:  Faker::Address.street_address << " Boston, MA, " << Faker::Address.zip,
-  type_of:     "Flea Market",
-  user_id:    1
+  name:       "Jim's Gems",
+  date:       Faker::Date.between(2.years.ago, Date.today),
+  address:    Faker::Address.street_address << " Boston, MA, 02108",
+  type_of:    "Flea Market",
+  user_id:    1,
+  latitude:
+  longitude:
   })
 
 Source.create({
-  name:     "Pete",
-  date:     Faker::Date.between(2.years.ago, Date.today),
-  address:  "unknown",
-  type_of:     "Craigslist",
-  user_id:    1
+  name:       "Pete",
+  date:       Faker::Date.between(2.years.ago, Date.today),
+  address:    "unknown",
+  type_of:    "Craigslist",
+  user_id:    1,
+  latitude:
+  longitude:
   })
 
 Category.create({ name: "Furniture" })

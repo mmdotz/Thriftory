@@ -52,6 +52,7 @@ gem 'figaro' #needed for file upload key ignore
 gem "refile", require: "refile/rails"
 gem 'refile-mini_magick'
 gem 'chartkick'
+gem 'geocoder'
 
 
 group :production do

@@ -22,7 +22,7 @@
             <td><%= source.date.strftime("%B %d, %Y") %></td>
             <td><%= source.address %></td>
             <td><%= source.type_of %></td>
-            <td><%=  1  %></td>
+            <td><%= source.distance_from_user(@user) %></td>
             <td><%= link_to 'Edit', edit_source_path(source) %></td>
             <td><%= link_to 'Delete', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
