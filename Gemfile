@@ -51,11 +51,11 @@ gem 'bcrypt'
 gem 'figaro' #needed for file upload key ignore
 gem "refile", require: "refile/rails"
 gem 'refile-mini_magick'
+gem 'refile-s3'
 gem 'chartkick'
 gem 'geocoder'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-
 
 group :production do
   gem 'puma'
