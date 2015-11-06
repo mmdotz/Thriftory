@@ -1,11 +1,12 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Stats for <%= Time.now.strftime("%B %d, %Y") %></h4>
+        <h4 class="modal-title" id="myModalLabel">Thriftory Stats for <%= Time.now.strftime("%B %d, %Y") %></h4>
       </div>
       <div class="modal-body">
         <h3> Total items in inventory: <%= @inventory %> </h3>
@@ -16,22 +17,39 @@
   </div>
 </div>
 
-<p> Items by status</p>
-<%= pie_chart Item.group(:status).count %>
-<p> Items by condition</p>
-<%= pie_chart Item.group(:condition).count %>
-<p> Income by category </p>
-<%= pie_chart(@payment_by_category) %>
+<div class="container" id="stats_page">
+    <div class="row chart_block" >
+      <div class="col-md-6">
+          <%= pie_chart Item.group(:status).count %>
+          <h3> Items by status</h3>
+      </div>
+      <div class="col-md-6">
+          <%= pie_chart Item.group(:condition).count %>
+          <h3> Items by condition</h3>
 
-<p>Expense by category</p>
-<%= bar_chart(
-  {"Furniture" => @furniture_expense,
-   "Clothing" => @clothing_expense,
-   "Household + Decor" => @household_expense,
-   "Other" => @other_expense}) %>
+      </div>
+    </div>
 
-<% if Finance.total_profit? %>
-<%= "PROFITABLE" %>
-<% else %>
-<%= "oof, expenses exceed profits. Go make a sale." %>
-<% end %>
+    <div="row chart_block">
+      <div class="col-med-6" >
+          <%= pie_chart(@payment_by_category) %>
+          <h3> Income by category <h3>
+
+      </div>
+
+    <div="row">
+    <div class="col-med-6">
+      <h3>Expense by category</h3>
+        <%= bar_chart(
+          {"Furniture" => @furniture_expense,
+           "Clothing" => @clothing_expense,
+           "Household + Decor" => @household_expense,
+           "Other" => @other_expense}) %>
+  </div>
+
+  <% if Finance.total_profit? %>
+  <%= "PROFITABLE" %>
+  <% else %>
+  <%= "oof, expenses exceed profits. Go make a sale." %>
+  <% end %>
+</div>

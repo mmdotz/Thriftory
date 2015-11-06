@@ -10,7 +10,7 @@
 
     <div class="col-md-2 col-md-offset-1">
       <%= link_to items_category_path(2) do %>
-      <%= image_tag 'clothes.png', height: '200', width: '200' %>
+      <%= image_tag 'clothes.png', height: '220', width: '200' %>
       <h3>Clothing</h3>
       <% end %>
     </div>
@@ -32,11 +32,11 @@
   <br>
 
   <div class="row">
-    <div class="col-md-3">
-      <%= link_to 'Search inventory', items_path, class: "btn btn-default" %>
+    <div class="col-md-2">
+      <%= link_to 'Search inventory', items_path, class: 'btn btn-md btn-warning btn-block' %>
     </div>
-    <div class="col-md-3 col-md-offset-6">
-      <%= link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
+    <div class="col-md-2 col-md-offset-6">
+      <%= link_to 'Create a New Category', new_category_path, class: 'btn btn-md btn-warning btn-block' %>
     </div>
   </div>
 </div>

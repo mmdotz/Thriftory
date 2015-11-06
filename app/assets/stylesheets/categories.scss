@@ -19,4 +19,14 @@
   clear: left;
   text-align: center;
 
+  &:hover{
+    background-color: white;
+  }
+}
+
+.row a{
+  &:hover{
+    background-color: white;
+  }
+
 }
