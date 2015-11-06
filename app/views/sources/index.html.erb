@@ -9,7 +9,7 @@
           <th>Date</th>
           <th>Address</th>
           <th>Type</th>
-          <th>Mileage One way</th>
+          <th>Distance from Home</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -22,7 +22,7 @@
             <td><%= source.date.strftime("%B %d, %Y") %></td>
             <td><%= source.address %></td>
             <td><%= source.type_of %></td>
-            <td><%= source.distance_from_user(@user) %></td>
+            <td class="distance"><%= source.distance_from_user(@user) %></td>
             <td><%= link_to 'Edit', edit_source_path(source) %></td>
             <td><%= link_to 'Delete', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>

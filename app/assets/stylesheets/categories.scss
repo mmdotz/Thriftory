@@ -4,24 +4,18 @@
 
 #category_index h3 {
   text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5em;
+  text-decoration: none;
 }
 
 #itemblock {
   border: solid 1px black;
 }
 
-.photo {
-  padding-top: 10px;
-}
-
-.photobody {
-  font-size: 1.5em;
-  clear: left;
-  text-align: center;
-
-  &:hover{
-    background-color: white;
-  }
+#category_index h2 {
+  color: #747D7D;
+  text-shadow: 20px black;
 }
 
 .row a{

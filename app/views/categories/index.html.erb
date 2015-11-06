@@ -1,42 +1,45 @@
 <div class="container" id="category_index">
-  <h2>Choose a category to view</h2>
   <div class="row">
     <div class="col-md-2">
       <%= link_to items_category_path(1) do %>
-      <%= image_tag 'sofa.png', height: '200', width: '200' %>
+      <%= image_tag 'sofa.png', height: '200', width: '100%' %><br><br>
       <h3>Furniture</h3>
       <% end %>
     </div>
 
     <div class="col-md-2 col-md-offset-1">
       <%= link_to items_category_path(2) do %>
-      <%= image_tag 'clothes.png', height: '220', width: '200' %>
+      <%= image_tag 'clothes.png', height: '180', width: '200' %>
       <h3>Clothing</h3>
       <% end %>
     </div>
-
+    <br>
     <div class="col-md-2 col-md-offset-1">
       <%= link_to items_category_path(3) do %>
-      <%= image_tag 'vase.png', height: '200', width: '200' %>
+      <%= image_tag 'vase2.png', height: '240', width: '100%' %>
       <h3>Household + Decor</h3>
       <% end %>
     </div>
 
-    <div class="col-md-2 col-md-offset-1">
+    <div class="col-md-3 col-md-offset-1">
       <%= link_to items_category_path(4) do %>
-      <%= image_tag 'sofa.png', height: '200', width: '200' %>
+      <%= image_tag 'question.jpeg', height: '180', width: '180' %>
       <h3>Other</h3>
       <% end %>
     </div>
   </div>
   <br>
+  <br>
+  <h2>Choose a category to view</h2>
+
+  <br>
 
   <div class="row">
     <div class="col-md-2">
-      <%= link_to 'Search inventory', items_path, class: 'btn btn-md btn-warning btn-block' %>
-    </div>
-    <div class="col-md-2 col-md-offset-6">
       <%= link_to 'Create a New Category', new_category_path, class: 'btn btn-md btn-warning btn-block' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to 'Search inventory', items_path, class: 'btn btn-md btn-warning btn-block' %>
     </div>
   </div>
 </div>
