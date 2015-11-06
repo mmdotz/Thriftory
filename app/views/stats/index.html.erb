@@ -20,18 +20,15 @@
 <%= pie_chart Item.group(:status).count %>
 <p> Items by condition</p>
 <%= pie_chart Item.group(:condition).count %>
+<p> Income by category </p>
+<%= pie_chart(@payment_by_category) %>
 
-<!--make this interactive? -->
-<p>Total payments received: <%= Finance.sum("buyer_pmt") %> </p>
-<p>Total expenses: <%= Finance.all.map { |finance| finance.item_total_outlay }.sum %> </p>
-
-<!-- BUYER PMT IS NIL? <p>Value per category</p>
-<%# Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
-}.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }] %><br> -->
-
-
-<%= Category.find(4).finances.map{ |f| f.procure_cost }.sum %>
-
+<%= bar_chart [
+  {name: "Furniture", data: @furniture_income},
+  {name: "Clothing", data: @clothing_income},
+  {name: "Household + Decor", data: @household_income},
+  {name: "Other", data: @other_income},
+] %>
 
 <% if Finance.total_profit? %>
 <%= "You are in the black!" %>
