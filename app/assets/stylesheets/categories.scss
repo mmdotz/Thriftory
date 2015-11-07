@@ -7,7 +7,14 @@
   font-family: 'Satisfy', cursive;
   font-size: 2.5em;
   text-decoration: none;
+  padding-top: 10px
 }
+
+#category_index h2 {
+  color: #747D7D;
+  text-shadow: 20px black;
+}
+
 
 #itemblock {
   border: solid 1px black;
@@ -15,7 +22,7 @@
   max-width: 280px;
 }
 
-#category_index h2 {
-  color: #747D7D;
-  text-shadow: 20px black;
+.category_icon {
+  text-align: center;
+  padding-top: 80px;
 }
