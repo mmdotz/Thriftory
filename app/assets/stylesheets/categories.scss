@@ -11,16 +11,11 @@
 
 #itemblock {
   border: solid 1px black;
+  padding-top: 10px;
+  max-width: 280px;
 }
 
 #category_index h2 {
   color: #747D7D;
   text-shadow: 20px black;
-}
-
-.row a{
-  &:hover{
-    background-color: white;
-  }
-
 }

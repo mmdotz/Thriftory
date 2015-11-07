@@ -17,6 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 .navibar {
   border-bottom: solid 3px #E9AE5A;
 }
@@ -33,6 +35,23 @@ body {
   bottom: 0;
 }
 
-a:visited {
-  // color: #747D7D !important;
+a {
+  color: #999999;
+}
+
+a:hover {
+  color: #333333;
+  background:transparent;
+  text-decoration: none;
+}
+
+table {
+  a:hover {
+    border-bottom: 2px solid;
+  }
+}
+
+a.btn:hover {
+  color: #333333;
+  background: darken(#E9AE5A, 15%);
 }

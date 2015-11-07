@@ -9,10 +9,12 @@ class ItemsController < ApplicationController
     #in Item model, created helper method to tell attachment method which object
     #we are passing in for refile upload
     respond_to do |format|
+      format.html do
+        render :index
+      end
       format.json do
         render json: @items.to_json(include: :source, methods: :photo_url)
       end
-      format.html
       format.csv {send_data @items.to_csv}
     end
   end
