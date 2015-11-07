@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// items show page
 #item_attr {
   border: groove #747D7D 8px;
   width: 500px;
@@ -14,4 +15,10 @@
   h3 {
     font-size: 2.5em;
   }
+}
+
+// items_new and edit pages
+.description_box {
+  min-height: 4em;
+  width: 100%;
 }
