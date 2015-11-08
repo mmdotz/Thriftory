@@ -6,7 +6,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Thriftory Stats for <%= Time.now.strftime("%B %d, %Y") %></h4>
+        <h2 class="modal-title" id="myModalLabel">Thriftory <br> Stats for <%= Time.now.strftime("%B %d, %Y") %></h2>
       </div>
       <div class="modal-body">
         <h3> Total items in inventory: <%= @inventory %> </h3>
@@ -20,6 +20,7 @@
     </div>
   </div>
 </div>
+<br>
 
 <div class="container" id="stats_page">
   <div class="row chart_block">

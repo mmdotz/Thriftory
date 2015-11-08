@@ -1,5 +1,5 @@
 
-$(document).click(function() {
+$(document).ready(function() {
     $('#myModal').modal('show');
 });
 
