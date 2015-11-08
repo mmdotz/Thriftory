@@ -11,23 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Category name" %><br>
-    <%= f.text_field :name %>
-    <p> new categories trigger creation of subcats</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="field">
+      <%= f.label "Category name" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+      <p> New categories trigger creation of subcategories.<br>
+      Please complete all fields.</p>
+    </div>
   </div>
+</div>
 
   <%= f.fields_for :subcat1s do |sc| %>
+<div class="row">
+  <div class="col-md-4">
     <div class="field">
       <%= sc.label "Subcategory 1 name" %><br>
-      <%= sc.text_field :name %>
+      <%= sc.text_field :name, class: "form-control" %>
     </div>
+  </div>
+</div>
 
     <%= sc.fields_for :subcat2s do |sc2| %>
+  <div class="row">
+    <div class="col-md-4">
       <div class="field">
         <%= sc2.label "Subcategory 2 name" %><br>
-        <%= sc2.text_field :name %>
+        <%= sc2.text_field :name, class: "form-control" %>
       </div>
+    </div>
+  </div>
     <% end %>
   <% end %>
 
