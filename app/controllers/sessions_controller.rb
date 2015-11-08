@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
 skip_before_filter :authenticate_user
 
   def new  #login page
-    @sample_email = "jd@example.com"
-    @sample_password = "password"
   end
 
   def create #a session

@@ -11,23 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="col-md-5">
+    <div class="field">
+      <%= f.label :date %><br>
+      <%= f.date_select :date, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :type_of %><br>
-    <%= f.text_field :type_of %>
+
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :type_of %><br>
+      <%= f.text_field :type_of, class: "form-control" %>
+    </div>
   </div>
+</div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  %>
   </div>
 <% end %>

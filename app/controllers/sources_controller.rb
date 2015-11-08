@@ -4,7 +4,7 @@ class SourcesController < ApplicationController
   # GET /sources
   # GET /sources.json
   def index
-    @sources = Source.all
+    @sources = current_user.sources
     @user = current_user
   end
 

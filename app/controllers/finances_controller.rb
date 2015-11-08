@@ -4,13 +4,13 @@ class FinancesController < ApplicationController
   # GET /finances
   # GET /finances.json
   def index
-    @finances = Finance.all
+    @finances = current_user.finances
   end
 
   # GET /finances/1
   # GET /finances/1.json
   def show
-    
+
   end
 
   # GET /finances/new
