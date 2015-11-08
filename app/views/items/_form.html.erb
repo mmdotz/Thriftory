@@ -14,82 +14,109 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <div class="field">
           <%= f.select :category_id,
-            options_from_collection_for_select(@categories, :id, :name, (@item.subcat2.subcat1.category.id if @item.persisted?) ), { prompt: 'Select a Category'}, { id: 'categories_select' } %>
+            options_from_collection_for_select(@categories, :id, :name, (@item.subcat2.subcat1.category.id if @item.persisted?) ), { prompt: 'Select a Category'}, { id: 'categories_select', class: "form-control" } %>
         </div>
+      </div>
+      <div class="col-md-3">
         <div class="field">
           <%= f.select :subcat1_id,
-            options_from_collection_for_select(@subcat1s, :id, :name, (@item.subcat2.subcat1.id if @item.persisted?) ), { prompt: 'Select 1st Subcategory'}, { id: 'subcat1s_select' } %>
+            options_from_collection_for_select(@subcat1s, :id, :name, (@item.subcat2.subcat1.id if @item.persisted?) ), { prompt: 'Select 1st Subcategory'}, { id: 'subcat1s_select', class: "form-control" } %>
         </div>
-
+      </div>
+      <div class="col-md-3">
         <div class="field">
           <%= f.select :subcat2_id,
-            options_from_collection_for_select(@subcat2s, :id, :name, (@item.subcat2.id if @item.persisted?) ), { prompt: 'Select 2nd Subcategory'}, { id: 'subcat2s_select' } %>
+            options_from_collection_for_select(@subcat2s, :id, :name, (@item.subcat2.id if @item.persisted?) ), { prompt: 'Select 2nd Subcategory'}, { id: 'subcat2s_select', class: "form-control" } %>
         </div>
       </div><!--col-->
     </div> <!--row-->
     <div class="row">
-      <div class="col-md-8 description_box">
+      <div class="col-md-9 description_box">
         <div class="field">
           <%= f.label :description %><br>
           <%= f.text_area :description, rows: 4, class: "form-control" %>
         </div>
       </div>
     </div>
-    <div class="field">
-      <%= f.label :quantity %><br>
-      <%= f.number_field :quantity, class: "form-control" %>
+<!--third row 3 items-->
+    <div class="row">
+      <div class="col-md-1 col-md-offset-2">
+        <div class="field">
+          <%= f.label :quantity %><br>
+          <%= f.number_field :quantity, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="field">
+          <%= f.label :storage_loc %><br>
+          <%= f.text_field :storage_loc, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="field">
+          <%= f.label :source_id %><br>
+          <%= f.text_field :source_id, class: "form-control" %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :shipping %><br>
-      <%= f.text_field :shipping, class: "form-control" %>
-    </div>
-    <div class="field">
-      <%= f.label :storage_loc %><br>
-      <%= f.text_field :storage_loc, class: "form-control" %>
-    </div>
-    <div class="field">
-      <%= f.label :status %><br>
-      <%= f.text_field :status, class: "form-control" %>
-    </div>
-    <div class="field">
-      <%= f.label :condition %><br>
-      <%= f.text_field :condition, class: "form-control" %>
-    </div>
-    <div class="field">
-      <%= f.label :source_id %><br>
-      <%= f.text_field :source_id, class: "form-control" %>
-    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-1">
+        <div class="field">
+          <%= f.label :status %><br>
+          <%= f.text_field :status, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="field">
+          <%= f.label :condition %><br>
+          <%= f.text_field :condition, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="field">
+          <%= f.label :shipping %><br>
+          <%= f.text_field :shipping, class: "form-control" %>
+        </div>
+      </div>
+    </div><!--row
 
-<!--f is parent of p so f.fields iterates over all p and f.submit captures all p -->
-
-    <%= f.fields_for :finances do |p| %>
-      <div class="field">
-        <%= p.label :procure_cost %><br>
-        <%= p.text_field :procure_cost, placeholder:"Procurement cost", class: "form-control" %>
+ is parent of p so f.fields iterates over all p and f.submit captures all p -->
+    <div class="row">
+        <%= f.fields_for :finances do |p| %>
+      <div class="col-md-2">
+        <div class="field">
+          <%= p.label :procure_cost %><br>
+          <%= p.text_field :procure_cost, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="field">
+          <%= p.label :pre_sale_cost %><br>
+          <%= p.text_field :pre_sale_cost, placeholder:"Pre-sale cost total", class: "form-control" %>
+        </div>
       </div>
 
-      <div class="field">
-        <%= p.label :pre_sale_cost %><br>
-        <%= p.text_field :pre_sale_cost, placeholder:"Pre-sale cost total", class: "form-control" %>
+        <!--edit form only -->
+      <div class="col-md-2">
+        <div class="field">
+          <%= p.label :shipping_cost %><br>
+          <%= p.text_field :shipping_cost, placeholder:"Shipping paid", class: "form-control" %>
+        </div>
       </div>
-
-      
-      <!--edit form only -->
-      <div class="field">
-        <%= p.label :shipping_cost %><br>
-        <%= p.text_field :shipping_cost, placeholder:"Shipping paid", class: "form-control" %>
+      <div class="col-md-2">
+        <div class="field">
+          <%= p.label :buyer_pmt %><br>
+          <%= p.text_field :buyer_pmt, placeholder:"Buyer Pmt", class: "form-control" %>
+        </div>
       </div>
-      <div class="field">
-        <%= p.label :buyer_pmt %><br>
-        <%= p.text_field :buyer_pmt, placeholder:"Buyer Pmt", class: "form-control" %>
-      </div>
-    <% end %>
-
+      <% end %>
+    </div><!--row-->
+    <br>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit%> can't get this change to orange btn
     </div>
   <% end %>
 </div>

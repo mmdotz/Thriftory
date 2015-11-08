@@ -14,14 +14,14 @@
             <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
           <% end %>
         <% end %>
-        <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
-        <%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
-        <%= link_to 'Edit', edit_item_path(@item) %> |
-        <%= link_to 'Back', items_path %>
       </div>
     </div>
   </div>
 </div>
+<%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
+<%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
 
 <div class="container-fluid">
   <div class="row">
