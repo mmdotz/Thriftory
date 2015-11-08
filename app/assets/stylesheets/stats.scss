@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#myModal #myModalLabel h4 {
+#myModalLabel h4 {
   font-family: 'Satisfy', cursive;
 }
 
@@ -16,4 +16,8 @@
     h3 {
       font-family: 'Satisfy', cursive;
     }
+}
+
+.profit {
+  padding-top: 10px;
 }
