@@ -4,19 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
     @user = current_user
   end
 
  def items
    @items = current_user.items
  end
-
-
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
 
   # GET /users/new
   def new

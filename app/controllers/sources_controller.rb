@@ -8,10 +8,6 @@ class SourcesController < ApplicationController
     @user = current_user
   end
 
-  # GET /sources/1
-  # GET /sources/1.json
-  def show
-  end
 
   # GET /sources/new
   def new

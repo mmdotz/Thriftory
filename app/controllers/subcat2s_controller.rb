@@ -7,11 +7,6 @@ class Subcat2sController < ApplicationController
     @subcat2s = Subcat2.all
   end
 
-  # GET /subcat2s/1
-  # GET /subcat2s/1.json
-  def show
-  end
-
   # GET /subcat2s/new
   def new
     @subcat2 = Subcat2.new

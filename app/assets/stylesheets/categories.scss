@@ -7,7 +7,6 @@
   font-family: 'Satisfy', cursive;
   font-size: 2.5em;
   text-decoration: none;
-  padding-top: 10px
 }
 
 #category_index p {
@@ -17,12 +16,22 @@
 }
 
 #itemblock {
-  border: solid 1px black;
-  padding-top: 10px;
+  border: groove 3px #eeeeee;
+  margin-top: 10px;
   max-width: 280px;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .category_icon {
   text-align: center;
   padding-top: 80px;
+}
+
+.header {
+  font-family: 'Satisfy', cursive;
+}
+
+.photobody {
+  margin: 20px 20px;
 }

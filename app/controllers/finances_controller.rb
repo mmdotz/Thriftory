@@ -7,12 +7,6 @@ class FinancesController < ApplicationController
     @finances = current_user.finances
   end
 
-  # GET /finances/1
-  # GET /finances/1.json
-  def show
-
-  end
-
   # GET /finances/new
   def new
   end

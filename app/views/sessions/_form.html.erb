@@ -14,8 +14,9 @@
     <%= password_field_tag :password, '', class: 'form-control', id: 'inputPassword', placeholder: 'Password', required: true %>
 
     <%= submit_tag "Sign In", class: 'btn btn-lg btn-warning btn-block' %>
-    <%= link_to('Create new account', new_user_path, class: 'btn btn-lg btn-warning btn-block') %>
-
   <% end %>
+  <br>
+  <br>
   </section>
 </div>
+New user? <em><%= link_to('Create an account', new_user_path) %></em>

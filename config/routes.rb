@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'stats/show'
 
   resources :users
-  resources :photos
+  resources :photos, :except => [:index]
+
   resources :subcat2s
   resources :subcat1s
   resources :categories do
