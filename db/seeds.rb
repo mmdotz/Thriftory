@@ -8,19 +8,19 @@
 
 
 user = User.new({
-  username:   "Jayson",
-  email:      "jd@example.com",
-  admin:      true,
-  address:    "337 Maple Street, New Bedford, MA 02740"
+  username:   "Annika",
+  email:      "ayd@example.com",
+  admin:      false,
+  address:    "164 Angell Street, Providence, RI 02912"
   })
   user.password = "password"
   user.save!
 
 user = User.new({
-  username:   "Annika",
-  email:      "ayd@example.com",
-  admin:      false,
-  address:    "164 Angell Street, Providence, RI 02912"
+  username:   "Jayson",
+  email:      "jd@example.com",
+  admin:      true,
+  address:    "337 Maple Street, New Bedford, MA 02740"
   })
   user.password = "password"
   user.save!
