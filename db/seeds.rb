@@ -9,7 +9,7 @@
 user = User.new({
   username:   "Joanne",
   email:      "jh@example.com",
-  admin:      true,
+  admin:      false,
   address:    "33 Leroy Drive, Riverside, RI 02915",
   latitude:
   longitude:
@@ -20,7 +20,7 @@ user = User.new({
 user = User.new({
   username:   "Jayson",
   email:      "jd@example.com",
-  admin:      false,
+  admin:      true,
   address:    "337 Maple Street, New Bedford, MA 02740"
   latitude:
   longitude:
