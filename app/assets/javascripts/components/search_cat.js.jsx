@@ -29,9 +29,13 @@ var Search = React.createClass({
     return (
       <section>
         <p>
-          <input className='form-control' type='text'
-            onChange={this.handleChange} value={this.state.search}
-            placeholder='search items' />
+          <div className="row">
+            <div className="col-md-6 searchbar">
+              <input className='form-control' type='text'
+                onChange={this.handleChange} value={this.state.search}
+                placeholder='search items' />
+            </div>
+          </div>
         </p>
         <div className="table-responsive">
           <table className="table table-hover">
