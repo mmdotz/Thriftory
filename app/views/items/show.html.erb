@@ -1,31 +1,13 @@
 <!-- Item show-->
 <br>
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> -->
-
-<div class="modal fade bs-example-modal-lg" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <strong>Picture:</strong>
-        <%= image_tag attachment_url(@item.photos.first, :image, :fill, 30, 30, format: :jpg) %>
-      </p>
-      <div class='photos'>
-        <% @item.photos.each do |photo| %>
-          <%= link_to photo do %>
-            <%= image_tag attachment_url(photo, :image, :fill, 100, 100, format: :jpg) %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
 </br>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4 col-md-offset-1" id="firstphoto">
       <% if @item.photos.empty? %>
         <br><br><br>
-        <%= link_to 'Add photos', new_photo_path(item_id: params[:id]),
-        class: "btn btn-warning box-shadow--8dp" %>
+          <%= link_to 'Add photos', new_photo_path(item_id: params[:id]),
+          class: "btn btn-warning box-shadow--8dp" %>
       <% else %>
         <%= image_tag attachment_url(@item.photos.first, :image, :fill, 400, 400, format: :jpg) %>
       <% end %>

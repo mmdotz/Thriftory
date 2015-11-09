@@ -17,17 +17,39 @@
       </thead>
 
       <tbody>
+        <% procure = [] %>
+        <% shipping = [] %>
+        <% pre_sale = [] %>
+        <% buyer_pmt = [] %>
         <% @finances.each do |finance| %>
           <tr>
             <td><%= finance.item.id %></td>
             <td><%= finance.item.description %></td>
-            <td><%= finance.procure_cost %></td>
-            <td><%= finance.shipping_cost %></td>
-            <td><%= finance.pre_sale_cost %></td>
-            <td><%= finance.buyer_pmt %></td>
+            <td><%= number_to_currency(finance.procure_cost)%></td>
+            <td><%= number_to_currency(finance.shipping_cost) %></td>
+            <td><%= number_to_currency(finance.pre_sale_cost) %></td>
+            <td><%= number_to_currency(finance.buyer_pmt)%></td>
+            <% procure << finance.procure_cost %>
+            <% shipping << finance.shipping_cost %>
+            <% pre_sale << finance.pre_sale_cost %>
+            <% buyer_pmt << finance.buyer_pmt %>
           </tr>
         <% end %>
       </tbody>
     </table>
   </table>
+  <div class="row">
+    <div class="col-md-1 col-md-offset-5">
+      <h5> <%= number_to_currency(procure.sum) %></h5>
+    </div>
+    <div class="col-md-1">
+      <h5><%= number_to_currency(shipping.sum) %></h5>
+    </div>
+    <div class="col-md-1">
+      <h5><%= number_to_currency(pre_sale.sum) %></h5>
+    </div>
+    <div class="col-md-1">
+      <h5><%= number_to_currency(buyer_pmt.sum) %></h5>
+    </div>
+  </div>
 </div>

@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @subcat1s   = []
     @subcat2s   = []
+    @sources = current_user.sources
   end
 
   def update_subcat1
