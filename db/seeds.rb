@@ -6,24 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.new({
-  username:   "Joanne",
-  email:      "jh@example.com",
-  admin:      false,
-  address:    "33 Leroy Drive, Riverside, RI 02915",
-  latitude:
-  longitude:
-  })
-  user.password = "password"
-  user.save!
 
 user = User.new({
   username:   "Jayson",
   email:      "jd@example.com",
   admin:      true,
   address:    "337 Maple Street, New Bedford, MA 02740"
-  latitude:
-  longitude:
   })
   user.password = "password"
   user.save!
@@ -31,10 +19,8 @@ user = User.new({
 user = User.new({
   username:   "Annika",
   email:      "ayd@example.com",
-  admin:      true,
+  admin:      false,
   address:    "164 Angell Street, Providence, RI 02912"
-  latitude:
-  longitude:
   })
   user.password = "password"
   user.save!
@@ -44,9 +30,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    Faker::Address.street_address << " Taunton, MA, 02780",
   type_of:    "Yard Sale",
-  user_id:    2,
-  latitude:
-  longitude:
+  user_id:    2
   })
 
 Source.create({
@@ -54,9 +38,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    Faker::Address.street_address << " Taunton, MA, 02780",
   type_of:    "Estate Sale",
-  user_id:    2,
-  latitude:
-  longitude:
+  user_id:    2
   })
 
 Source.create({
@@ -64,9 +46,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    Faker::Address.street_address << " Boston, MA, 02108",
   type_of:    "Flea Market",
-  user_id:    2,
-  latitude:
-  longitude:
+  user_id:    2
   })
 
 Source.create({
@@ -74,9 +54,7 @@ Source.create({
   date:       Faker::Date.between(2.years.ago, Date.today),
   address:    "unknown",
   type_of:    "Craigslist",
-  user_id:    2,
-  latitude:
-  longitude:
+  user_id:    2
   })
 
 Category.create({ name: "Furniture" })
