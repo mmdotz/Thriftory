@@ -52,8 +52,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
-
     respond_to do |format|
       if @item.save
         format.html { redirect_to item_path(@item), notice: 'Item was successfully created.' }
@@ -98,7 +96,7 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:category_id, :subcat1_id, :subcat2_id,
-      :description, :quantity, :shipping, :storage_loc, :status, :source_id,
-      :photo, finances_attributes: [:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
+      :description, :quantity, :shipping, :storage_loc, :status, :source_id, :condition, :status,
+      :photo, finances_attributes: [:id,:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
     end
 end

@@ -84,33 +84,34 @@
 
     is parent of p so f.fields iterates over all p and f.submit captures all p -->
       <div class="row">
-          <%= f.fields_for :finances do |p| %>
-        <div class="col-md-2">
-          <div class="field">
-            <%= p.label :procure_cost %><br>
-            <%= p.text_field :procure_cost, class: "form-control" %>
+        <%= f.fields_for :finances do |p| %>
+        <%= p.hidden_field :id, value: p.object.id %> <!--so as not to create a new record, pass in id of edited -->
+          <div class="col-md-2">
+            <div class="field">
+              <%= p.label :procure_cost %><br>
+              <%= p.text_field :procure_cost, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="field">
-            <%= p.label :pre_sale_cost %><br>
-            <%= p.text_field :pre_sale_cost, class: "form-control" %>
+          <div class="col-md-2">
+            <div class="field">
+              <%= p.label :pre_sale_cost %><br>
+              <%= p.text_field :pre_sale_cost, class: "form-control" %>
+            </div>
           </div>
-        </div>
 
-          <!--edit form only -->
-        <div class="col-md-2">
-          <div class="field">
-            <%= p.label :shipping_cost %><br>
-            <%= p.text_field :shipping_cost, class: "form-control" %>
+            <!--edit form only -->
+          <div class="col-md-2">
+            <div class="field">
+              <%= p.label :shipping_cost %><br>
+              <%= p.text_field :shipping_cost, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="field">
-            <%= p.label :buyer_pmt %><br>
-            <%= p.text_field :buyer_pmt, class: "form-control" %>
+          <div class="col-md-2">
+            <div class="field">
+              <%= p.label :buyer_pmt %><br>
+              <%= p.text_field :buyer_pmt, class: "form-control" %>
+            </div>
           </div>
-        </div>
         <% end %>
       </div><!--row-->
       <br>
