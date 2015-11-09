@@ -67,10 +67,12 @@
     <br>
     <div class="link-tos">
       <div class="col-md-3 col-md-offset-3">
+        <h4>
       <%= link_to 'Add photos', new_photo_path(item_id: params[:id]) %> |
-      <%= link_to 'Destroy', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> |
       <%= link_to 'Edit', edit_item_path(@item) %> |
       <%= link_to 'Back', items_path %>
+    </h4>
     <div>
   </div>
 </div>

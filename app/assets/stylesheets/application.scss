@@ -17,20 +17,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$primary-color: #E9AE5A;
 
+.navbar.navbar-default {
+  margin-bottom: 0;
+}
 
 .navibar {
-  border-bottom: solid 3px #E9AE5A;
+  border-bottom: solid 3px $primary-color
+}
+
+.nav-pills > li > a {
+  border-radius: 0;
+  padding: 15px;
 }
 
 body {
-  border-top: solid 7px #E9AE5A;
+  border-top: solid 7px $primary-color;
 }
 
 .bodyborder {
   height: 7px;
   width: 100%;
-  background-color: #E9AE5A;
+  background-color: $primary-color;
   position: fixed;
   bottom: 0;
 }
@@ -53,7 +62,7 @@ table {
 
 a.btn:hover {
   color: #333333;
-  background: darken(#E9AE5A, 15%);
+  background: darken($primary-color, 15%);
 }
 
 .box-shadow--8dp {

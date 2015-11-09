@@ -28,8 +28,11 @@
     <div class="navibar">
       <%= react_component("Navigation") %>
     </div>
+    <% end %>
+    <% if notice || alert %>
     <p class="notice"><%= notice %></p>     <p class="alert"><%= alert %></p>
     <% end %>
+
     <%= yield %>
     <div class="bodyborder"></div>
   </body>
