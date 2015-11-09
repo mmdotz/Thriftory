@@ -1,14 +1,18 @@
-<p>
-  <strong>Photo:</strong>
-  <%= @photo.id %>
-  <%= image_tag attachment_url(@photo, :image, :fill, 900, 300, format: :png) %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <%= image_tag attachment_url(@photo, :image, :fill, 600, 600, format: :png) %>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+      <h3>
+        <%= @photo.item.description.titleize %>
+      </h3>
+      <h4>
+      <%= link_to 'Delete', photo_path(@photo), method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <%= link_to 'Edit', edit_photo_path(@photo) %> |
+      <%= link_to 'Back', photos_path %>
+      </h4>
+    </div>
+  </div>
 
-<p>
-  <strong>Item:</strong>
-  <%= @photo.item.description %>
-</p>
-
-<%= link_to 'Delete', photo_path(@photo), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<div>
