@@ -7,8 +7,6 @@ class Item < ActiveRecord::Base
   accepts_nested_attributes_for :finances
   validates_associated          :finances
 
-  attachment :photo
-
   def self.to_csv
     attributes = %w(description quantity shipping storage_loc status source_id
     category_id subcat1_id subcat2_id)
