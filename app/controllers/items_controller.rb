@@ -1,18 +1,22 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  after_action :remove_cache
 
   # GET /items
   # GET /items.json
   def index
     @items = current_user.items
-
     #in Item model, created helper method to tell attachment method which object
     #we are passing in for refile upload
     respond_to do |format|
       format.html do
+        response.headers["Cache-Control"] = "no-cache"
+
         render :index
       end
       format.json do
+        response.headers["Cache-Control"] = "no-cache"
+
         render json: @items.to_json(include: :source, methods: :photo_url)
       end
       format.csv {send_data @items.to_csv}
@@ -83,7 +87,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to @items, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -100,4 +104,12 @@ class ItemsController < ApplicationController
       :description, :quantity, :shipping, :storage_loc, :status, :source_id, :condition, :status,
       :photo, finances_attributes: [:id,:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
     end
+
+    #Force Rails to tell browser to not cache responses from this controller - fix bug
+    def remove_cache
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
+
 end
