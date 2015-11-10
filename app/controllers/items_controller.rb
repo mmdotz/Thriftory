@@ -102,7 +102,7 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:category_id, :subcat1_id, :subcat2_id,
       :description, :quantity, :shipping, :storage_loc, :status, :source_id, :condition, :status,
-      :photo, finances_attributes: [:id,:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
+      finances_attributes: [:id,:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
     end
 
     #Force Rails to tell browser to not cache responses from this controller - fix bug
