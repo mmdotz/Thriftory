@@ -29,9 +29,11 @@
       <%= react_component("Navigation") %>
     </div>
     <% end %>
-    <% if notice || alert %>
-    <p class="notice"><%= notice %></p>     <p class="alert"><%= alert %></p>
-    <% end %>
+    <% unless controller_name == "sessions" %>
+      <% if notice || alert %>
+        <p class="notice"><%= notice %></p>     <p class="alert"><%= alert %></p>
+        <% end %>
+        <% end %>
 
     <%= yield %>
     <div class="bodyborder"></div>
