@@ -36,7 +36,7 @@ More information in the Gemfile
 - `rails s` to start server
 
 ##More information
-- original [UMLs](/InventoryUMLupdate.jpg)
+- original ![UMLs](/UMLorig.png)
 - current [Trello scrum board](https://trello.com/b/BvRjL9bK/thriftory)
 
 ##Credits and Acknowledgements
