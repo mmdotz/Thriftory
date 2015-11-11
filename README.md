@@ -6,7 +6,7 @@ Have the thrill of the find and peace of mind.
 photos. Thriftory is the first app made with the hobby thrift reseller in mind.
 - Users can create a new account to access the app, upload their own inventory and
 start tracking inventory activity.
-Check out the live site at `thriftory.herokuapp.com`.
+Check out the live site at [Thriftory](thriftory.herokuapp.com)
 
 ##Libraries, software and other tools used
 - Rails (4.2.4)
@@ -15,14 +15,12 @@ Check out the live site at `thriftory.herokuapp.com`.
 - Image hosting by Amazon Web Services
 - Refile for image upload
 - Postgresql Database
-- Puma webserver
 - Sass
 - React for dynamic item search
 - Bcrypt for password encryption
 - CSV for exporting data
 - Chartkick for graphing
 - Geocoder for distance measurement
-- strftime for datetime formatting.
 
 More information in the Gemfile
 
@@ -36,7 +34,7 @@ More information in the Gemfile
 - `rails s` to start server
 
 ##More information
-- original [UMLs](InventoryUMLupdate.jpg)
+- original [UMLs](/InventoryUMLupdate.jpg)
 - current [Trello scrum board](https://trello.com/b/BvRjL9bK/thriftory)
 
 ##Credits and Acknowledgements
