@@ -27,6 +27,16 @@ $primary-color: #E9AE5A;
   border-bottom: solid 3px $primary-color
 }
 
+.hamburger-btn {
+  margin-top: 10px;
+  font-size: 1.8em;
+}
+
+.hamburger-opened > li {
+  float: none;
+  text-align: center;
+}
+
 .nav-pills > li > a {
   border-radius: 0;
   padding: 15px;

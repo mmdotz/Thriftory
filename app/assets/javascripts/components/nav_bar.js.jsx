@@ -1,10 +1,25 @@
 var Navigation = React.createClass({
+  getInitialState: function () {
+    return {
+      hamburgerOpened: false
+    };
+  },
+
+  handleClick: function () {
+    if (this.state.hamburgerOpened === false) {
+      this.setState({ hamburgerOpened: true });
+    } else {
+      this.setState({ hamburgerOpened: false });
+    }
+  },
+
   render: function() {
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav nav-pills">
+          <div className="navbar-collapse">
+            <span onClick={this.handleClick} className="visible-xs glyphicon hamburger-btn glyphicon-menu-hamburger" aria-hidden="true"></span>
+            <ul className={this.linkClassName()}>
               <li><a href='/home'>Home</a></li>
               <li><a href='/items'>Inventory</a></li>
               <li><a href='/items/new'>Add a new item</a></li>
@@ -16,6 +31,15 @@ var Navigation = React.createClass({
             </ul>
           </div>
         </div>
-      </nav>);
+      </nav>
+    );
+  },
+
+  linkClassName: function () {
+    if (this.state.hamburgerOpened === true) {
+      return "nav nav-pills hamburger-opened";
+    } else {
+      return "hidden-xs nav nav-pills";
+    }
   }
 });
