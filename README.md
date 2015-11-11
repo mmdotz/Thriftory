@@ -7,7 +7,7 @@ photos. Thriftory is the first app made with the hobby thrift reseller in mind.
 - Users can create a new account to access the app, upload their own inventory and
 start tracking inventory activity.
 Check out the live site at [Thriftory](thriftory.herokuapp.com).
-![loginpage](/frontpage.png?raw=true "Thriftory")
+![loginpage](/docs/frontpage.png?raw=true "Thriftory")
 
 ##Libraries, software and other tools used
 - Ruby (2.2.1)
@@ -36,8 +36,15 @@ More information in the Gemfile
 - `rails s` to start server
 
 ##More information
-- original ![UMLs](/UMLorig.png)
+- original UMLs ![UMLs](/docs/UMLorig.png)
 - current [Trello scrum board](https://trello.com/b/BvRjL9bK/thriftory)
+- wireframes
+	- [login](/docs/login.png)
+	- [stats](/docs/stats.png)
+   - [items by category](/docs/items_by_category.png)
+   - [homepage](/docs/home.png)
+   - [category search](/docs/choose_category.png)
+   - [add_new_item](/docs/add_inventory.png)
 
 ##Credits and Acknowledgements
 - logo assistance [Corey Elliot Design](https://www.linkedin.com/in/coreyaelliott)
