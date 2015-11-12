@@ -6,9 +6,10 @@ Have the thrill of the find and peace of mind.
 photos. Thriftory is the first app made with the hobby thrift reseller in mind.
 - Users can create a new account to access the app, upload their own inventory and
 start tracking inventory activity.
-Check out the live site at [Thriftory](thriftory.herokuapp.com).
-![loginpage](/docs/frontpage.png?raw=true "Thriftory")
+- Check out the live site at [Thriftory](thriftory.herokuapp.com).
 Please use `jd@example.com` and `password` to use the demo tables.
+
+![loginpage](/docs/frontpage.png?raw=true "Thriftory")
 
 ##Libraries, software and other tools used
 - Ruby (2.2.1)
