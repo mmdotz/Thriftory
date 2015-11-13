@@ -21,7 +21,7 @@
 
   //once the document loads
   //when the category selection is clicked
-  //get a filtered list of subcat1s via AJAX (no get?)
+  //get a filtered list of subcat1s via AJAX
   //based on the id of the category selected
   //after that is returned
   //when the subcat1 selection is clicked
