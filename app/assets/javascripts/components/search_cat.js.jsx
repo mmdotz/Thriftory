@@ -54,7 +54,7 @@ var Search = React.createClass({
             <tbody>
               {this.state.filtered_items.map(function (item) {
                 return (
-                  //linked items returned after  filters
+                  //linked items returned after filters
                   <tr>
                     <td>{ item.id }</td>
                     <td><a href={'/items/' + item.id}>{ item.description } </a></td>
@@ -73,7 +73,7 @@ var Search = React.createClass({
       </section>
   );
 },
-
+//allows reset of search if target is backtyped to index 0
   handleChange: function (event) {
     var filtered_items = this.state.all_items.filter(function (item) {
       return (item.description.toLowerCase().indexOf(event.target.value.toLowerCase()) > -1);

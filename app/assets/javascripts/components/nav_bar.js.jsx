@@ -35,6 +35,7 @@ var Navigation = React.createClass({
     );
   },
 
+//action required for small screen click on hamberger menu
   linkClassName: function () {
     if (this.state.hamburgerOpened === true) {
       return "nav nav-pills hamburger-opened";
