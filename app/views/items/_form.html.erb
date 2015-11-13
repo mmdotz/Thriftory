@@ -80,12 +80,13 @@
             <%= f.text_field :condition, class: "form-control" %>
           </div>
         </div>
-      </div><!--row
+      </div>
 
-    is parent of p so f.fields iterates over all p and f.submit captures all p -->
+    <!--is parent of p so f.fields iterates over all p and f.submit captures all p -->
       <div class="row">
         <%= f.fields_for :finances do |p| %>
-        <%= p.hidden_field :id, value: p.object.id %> <!--so as not to create a new record, pass in id of edited -->
+        <!--so as not to create a new record, pass in id of edited -->
+        <%= p.hidden_field :id, value: p.object.id %>
           <div class="col-md-2">
             <div class="field">
               <%= p.label :procure_cost %><br>
