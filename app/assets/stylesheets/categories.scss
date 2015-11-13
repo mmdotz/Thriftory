@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+//Items by category page
 #category_index h3 {
   text-align: center;
   font-family: 'Satisfy', cursive;
@@ -23,15 +25,22 @@
   text-align: center;
 }
 
-.category_icon {
-  text-align: center;
-  padding-top: 80px;
-}
-
 .header {
   font-family: 'Satisfy', cursive;
 }
 
 .photobody {
   margin: 20px 20px;
+}
+
+//Category index page
+.category_icon {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.image {
+  border: solid;
+  border-radius: 5px;
+  padding: 10px;
 }
