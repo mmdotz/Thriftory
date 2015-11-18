@@ -1,4 +1,6 @@
 #Thriftory
+<a href="https://codeclimate.com/github/mmdotz/Thriftory"><img src="https://codeclimate.com/github/mmdotz/Thriftory/badges/gpa.svg" /></a>
+
 Welcome to Thriftory, the thrifter's inventory app.
 Have the thrill of the find and peace of mind.
 
