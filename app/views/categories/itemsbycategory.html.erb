@@ -5,7 +5,7 @@
       <h1><%= @category.name %> Items</h1>
     </div>
   </div>
-  <% unless current_user %>
+  <% if @inventory.nil? %>
   <%= link_to 'Add a new item', new_item_path, class: 'btn btn-md btn-warning
   box-shadow--8dp' %>
   <% else %>
