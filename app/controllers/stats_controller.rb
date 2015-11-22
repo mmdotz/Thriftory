@@ -1,6 +1,6 @@
 class StatsController < ApplicationController
   def index
-    @items = Item.all
+    @items = current_user.items
     @item = Item.last
     @finances = Finance.all
 

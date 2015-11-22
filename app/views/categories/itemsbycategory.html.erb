@@ -1,16 +1,15 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-1 header">
       <h1><%= @category.name %> Items</h1>
     </div>
   </div>
-  <% if @inventory.nil? %>
+  <% if current_user.items.nil? %>
   <%= link_to 'Add a new item', new_item_path, class: 'btn btn-md btn-warning
   box-shadow--8dp' %>
   <% else %>
-  <% @category_items.each_slice(3) do |row| %>
     <div class="row">
+      <% @category_items.each_slice(3) do |row| %>
       <% row.each.with_index do |catitem, index| %>
         <%= link_to item_path(catitem) do %>
             <!--if first item in row, don't add offset -->
@@ -25,6 +24,6 @@
         <% end %>
       <% end %>
       <% end %>
+      <% end %>
     </div>
-  <% end %>
 </div>
