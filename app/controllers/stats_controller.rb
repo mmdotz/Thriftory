@@ -1,14 +1,13 @@
 class StatsController < ApplicationController
   def index
     @items = Item.all
-    @inventory = @items.count
     @item = Item.last
     @finances = Finance.all
 
     @moneyin = Finance.sum("buyer_pmt")
     @moneyout = Finance.all.map { |finance| finance.item_total_outlay }.sum
 
-    
+
     @payment_by_category = Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
     }.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }]
 

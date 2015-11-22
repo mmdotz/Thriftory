@@ -9,13 +9,17 @@
         <h2 class="modal-title" id="myModalLabel">Thriftory <br> Stats for <%= Time.now.strftime("%B %d, %Y") %></h2>
       </div>
       <div class="modal-body">
-        <h3> Total items in inventory: <%= @inventory %> </h3>
+        <% if @inventory.nil? %>
+        <h4> Sorry, you have no inventory to report. </h4>
+        <% else %>
+        <h3> Total items in inventory: <%= @current_user.inventory %> </h3>
         <h3> Total items added this week: <%= total_week_items %> </h3>
         <h3> <% if Finance.total_profit? %>
         <%= "PROFITABLE!" %>
         <% else %>
         <%= "Yikes! Expenses exceed profits; Go make a sale." %>
         <% end %> </h3>
+        <% end %>
       </div>
     </div>
   </div>
