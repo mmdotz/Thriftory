@@ -1,3 +1,5 @@
+<% unless @sources.nil? %>
+
 <div class="container">
   <div class="sources">
     <h1>Sources + Vendors</h1>
@@ -38,5 +40,9 @@
   <%= link_to 'Add a New Source', new_source_path, class: 'btn btn-warning box-shadow--8dp' %>
 </div>
 <div class="col-md-3 col-md-offset-6">
-  <h3> Total mileage: <%= mileage.reduce(:+).round(2) %>
+  <h3> Total mileage: <%= mileage.reduce(:+).round(2) unless mileage.empty? %>
 </div>
+
+<% else %>
+<%= link_to 'Add a New Source', new_source_path, class: 'btn btn-warning box-shadow--8dp' %>
+<% end %>
