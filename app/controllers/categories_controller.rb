@@ -15,7 +15,6 @@ class CategoriesController < ApplicationController
   def items
     @category = Category.find(params[:id])
     @category_items = Item.where(category_id: params[:id])
-    @category_items = @category_items.paginate(:page => params[:page], :per_page => 9)
     render 'itemsbycategory'
   end
 

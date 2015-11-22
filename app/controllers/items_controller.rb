@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def index
     @items = current_user.items
     #in Item model, created helper method to tell attachment method which object
-    #we are passing in for refile upload
+    #we are passing in for refile upload, otherwise reterned JSON objects on :back
     respond_to do |format|
       format.html do
         response.headers["Cache-Control"] = "no-cache"
