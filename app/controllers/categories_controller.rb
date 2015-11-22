@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
   def items
     @category = Category.find(params[:id])
-    @category_items = Item.where(category_id: params[:id])
+    @category_items = current_user.items.where(category_id: params[:id])
     render 'itemsbycategory'
   end
 

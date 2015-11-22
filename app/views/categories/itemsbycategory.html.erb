@@ -5,11 +5,11 @@
       <h1><%= @category.name %> Items</h1>
     </div>
   </div>
-  <% if @inventory.nil? %>
+  <% unless current_user %>
   <%= link_to 'Add a new item', new_item_path, class: 'btn btn-md btn-warning
   box-shadow--8dp' %>
   <% else %>
-  <% @current_user.category_items.each_slice(3) do |row| %>
+  <% @category_items.each_slice(3) do |row| %>
     <div class="row">
       <% row.each.with_index do |catitem, index| %>
         <%= link_to item_path(catitem) do %>
