@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @user = current_user
-    @inventory = @items.count
   end
 
  def items
