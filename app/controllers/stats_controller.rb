@@ -11,6 +11,8 @@ class StatsController < ApplicationController
     @payment_by_category = Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
     }.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }]
 
+    cat_finances = current_user.finances.map{ |f| }
+
     @furniture_expense = Category.find(1).finances.map{ |f| f.item_total_outlay }.sum
     @clothing_expense = Category.find(2).finances.map{ |f| f.item_total_outlay }.sum
     @household_expense = Category.find(3).finances.map{ |f| f.item_total_outlay }.sum
