@@ -106,6 +106,7 @@ class ItemsController < ApplicationController
     end
 
     #Force Rails to tell browser to not cache responses from this controller - fix bug
+    #using back button produced items in JSON
     def remove_cache
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
       response.headers["Pragma"] = "no-cache"
