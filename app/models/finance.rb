@@ -13,7 +13,7 @@ class Finance < ActiveRecord::Base
     self.buyer_pmt > self.item_total_outlay
   end
 
-  def self.total_profit?  
+  def self.total_profit?
      self.all.map { |finance| finance.buyer_pmt }.sum > self.sum_total_outlay
   end
 end
