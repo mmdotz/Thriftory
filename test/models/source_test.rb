@@ -1,7 +1,5 @@
 require 'test_helper'
 
 class SourceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  #add test to check mileage from source
 end

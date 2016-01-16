@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class PhotoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  #add test for photo upload
 end
