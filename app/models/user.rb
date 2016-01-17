@@ -13,4 +13,5 @@ class User < ActiveRecord::Base
     self.username = self.username.downcase
   end
 
+
 end
