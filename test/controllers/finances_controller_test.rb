@@ -18,7 +18,9 @@ class FinancesControllerTest < ActionController::TestCase
 
   test "should create finance" do
     assert_difference('Finance.count') do
-      post :create, finance: { buyer_pmt: @finance.buyer_pmt, item_id: @finance.item_id, pre-sale_cost: @finance.pre-sale_cost, pre-sale_notes: @finance.pre-sale_notes, procure_cost: @finance.procure_cost, shipping_cost: @finance.shipping_cost }
+      post :create, finance: { buyer_pmt: @finance.buyer_pmt, item_id: @finance.item_id,
+         'pre-sale_cost': @finance.pre-sale_cost, 'pre-sale_notes': @finance.pre-sale_notes,
+         procure_cost: @finance.procure_cost, shipping_cost: @finance.shipping_cost }
     end
 
     assert_redirected_to finance_path(assigns(:finance))
@@ -35,7 +37,7 @@ class FinancesControllerTest < ActionController::TestCase
   end
 
   test "should update finance" do
-    patch :update, id: @finance, finance: { buyer_pmt: @finance.buyer_pmt, item_id: @finance.item_id, pre-sale_cost: @finance.pre-sale_cost, pre-sale_notes: @finance.pre-sale_notes, procure_cost: @finance.procure_cost, shipping_cost: @finance.shipping_cost }
+    patch :update, id: @finance, finance: { buyer_pmt: @finance.buyer_pmt, item_id: @finance.item_id, 'pre-sale_cost': @finance.pre-sale_cost, 'pre-sale_notes': @finance.pre-sale_notes, procure_cost: @finance.procure_cost, shipping_cost: @finance.shipping_cost }
     assert_redirected_to finance_path(assigns(:finance))
   end
 
