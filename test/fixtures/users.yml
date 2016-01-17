@@ -3,7 +3,14 @@
 one:
   username: MyString
   password_digest: MyString
+  email: MyString
+  admin: true
+  address: MyString
+
 
 two:
   username: MyString
   password_digest: MyString
+  email: MyString
+  admin: false
+  address: MyString
