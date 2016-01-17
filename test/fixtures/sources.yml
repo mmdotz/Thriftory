@@ -4,10 +4,10 @@ one:
   name: MyString
   date: 2015-10-25 14:35:25
   address: MyString
-  type: 
+  type_of: MyString
 
 two:
   name: MyString
   date: 2015-10-25 14:35:25
   address: MyString
-  type: 
+  type_of: MyString

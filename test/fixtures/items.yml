@@ -1,25 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category: MyString
-  subcat1: MyString
-  subcat2: MyString
   description: MyString
   quantity: 1
   shipping: MyString
   storage_loc: MyString
   status: MyString
-  photo: 
-  source_id: 
+  source_id:
 
 two:
-  category: MyString
-  subcat1: MyString
-  subcat2: MyString
   description: MyString
   quantity: 1
   shipping: MyString
   storage_loc: MyString
   status: MyString
-  photo: 
-  source_id: 
+  source_id:
