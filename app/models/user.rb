@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  before_create :check_params
+  before_save :check_params
   has_secure_password
   has_many :sources
   has_many :items, through: :sources
   has_many :finances, through: :items
   validates :password, length: { minimum: 5 }
   validates :username, :uniqueness => true
+  validates :email, :presence => true
   geocoded_by :address
   after_validation :geocode
 
