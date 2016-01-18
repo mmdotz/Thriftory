@@ -6,7 +6,11 @@ one:
   shipping: MyString
   storage_loc: MyString
   status: MyString
+  condition: MyString
   source_id:
+  subcat2_id:
+  category_id:
+  subcat1_id:
 
 two:
   description: MyString
@@ -14,4 +18,8 @@ two:
   shipping: MyString
   storage_loc: MyString
   status: MyString
+  condition: MyString
   source_id:
+  subcat2_id:
+  category_id:
+  subcat1_id:
