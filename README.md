@@ -21,6 +21,7 @@ Please use `jd@example.com` and `password` to use the demo tables.
 - Web hosting by Heroku
 - Image hosting by Amazon Web Services
 - Refile for image upload
+- Minitest for model testing
 - Postgresql Database
 - Sass
 - React for dynamic item search
