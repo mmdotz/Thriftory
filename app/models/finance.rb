@@ -1,5 +1,6 @@
 class Finance < ActiveRecord::Base
-  belongs_to :item
+  belongs_to :item, :autosave => true, :validate => true
+
 
   def item_total_outlay
     procure_cost + shipping_cost + pre_sale_cost

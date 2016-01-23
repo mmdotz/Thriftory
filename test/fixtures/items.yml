@@ -1,24 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyString
+  description: "vintage bowling shirt men's large maroon"
   quantity: 1
-  shipping: MyString
-  storage_loc: MyString
-  status: MyString
-  condition: MyString
+  shipping: "buyer"
+  storage_loc: "garage"
+  status: "sold"
+  condition: "good"
   source_id:
   subcat2_id:
   category_id:
   subcat1_id:
 
 two:
-  description: MyString
+  description: "dress formal frilly prom"
   quantity: 1
-  shipping: MyString
-  storage_loc: MyString
-  status: MyString
-  condition: MyString
+  shipping: "pick up"
+  storage_loc: "cabinet 5"
+  status: "listed"
+  condition: "poor"
   source_id:
   subcat2_id:
   category_id:

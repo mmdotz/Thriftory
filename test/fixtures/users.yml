@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
-  password_digest: MyString
-  email: MyString
+  username: "ERic"
+  password_digest: "password"
+  email: "eric@example.com"
   admin: true
-  address: MyString
+  address: "4200 North Lamar Blvd., Austin TX 78702"
 
 
 two:
-  username: MyString
-  password_digest: MyString
-  email: MyString
+  username: "Paul"
+  password_digest: "password"
+  email: "paul2@example.com"
   admin: false
-  address: MyString
+  address: "4600 Grover Avenue, Austin, TX 78702"

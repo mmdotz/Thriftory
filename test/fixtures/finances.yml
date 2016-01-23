@@ -3,7 +3,7 @@
 one:
   procure_cost: 1
   shipping_cost: 1
-  'pre_sale_notes': MyString
+  pre_sale_notes: "dry cleaning required"
   pre_sale_cost: 1
   buyer_pmt: 1
   item_id: 1
@@ -11,7 +11,7 @@ one:
 two:
   procure_cost: 1
   shipping_cost: 1
-  'pre_sale_notes': MyString
+  pre_sale_notes: "repair loose buttons on shirt"
   pre_sale_cost: 1
   buyer_pmt: 1
   item_id: 1
