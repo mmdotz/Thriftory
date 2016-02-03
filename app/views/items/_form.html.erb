@@ -57,12 +57,13 @@
         <div class="col-md-2">
           <div class="field">
             <%= f.label :source_id %><br>
-            <%= f.text_field :source_id, class: "form-control" %>
+            <%= f.select :source_id,
+              options_from_collection_for_select(@sources, :id, :name), { prompt: 'Select a Source'}, class: "form-control" %>
           </div>
         </div>
         <div class="col-md-2">
           <div class="field">
-            <%= f.label :shipping %><br>
+            <%= f.label :shipping_paid_by? %><br>
             <%= f.text_field :shipping, class: "form-control" %>
           </div>
         </div>
