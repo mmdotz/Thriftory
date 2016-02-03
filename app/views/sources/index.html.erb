@@ -29,7 +29,10 @@
             <td><%= source.type_of %></td>
             <td class="distance"><%= source.distance_from_user(@user) %></td>
             <td><%= link_to 'Edit', edit_source_path(source) %></td>
+            <!--delete option should be only for sources with no items-->
+            <% if source.items.first.nil? %>
             <td><%= link_to 'Delete', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
             <% mileage << source.distance_from_user(@user) %>
           </tr>
         <% end %>
