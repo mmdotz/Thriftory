@@ -13,6 +13,7 @@
           <th>Shipping cost</th>
           <th>Pre-sale cost</th>
           <th>Buyer pmt</th>
+          <th>Profitable?</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -30,6 +31,7 @@
             <td><%= number_to_currency(finance.shipping_cost) %></td>
             <td><%= number_to_currency(finance.pre_sale_cost) %></td>
             <td><%= number_to_currency(finance.buyer_pmt)%></td>
+            <td><%= finance.item_profit? %></td>
             <% procure << finance.procure_cost %>
             <% shipping << finance.shipping_cost %>
             <% pre_sale << finance.pre_sale_cost %>
