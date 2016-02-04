@@ -22,6 +22,7 @@ class SourcesController < ApplicationController
   # POST /sources.json
   def create
     @source = Source.new(source_params)
+    @source.user_id = current_user.id
 
     respond_to do |format|
       if @source.save
@@ -67,6 +68,6 @@ class SourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
-      params.require(:source).permit(:name, :date, :address, :type_of, :latitude, :longitude, :user_id)
+      params.require(:source).permit(:name, :date, :address, :type_of, :latitude, :longitude)
     end
 end
