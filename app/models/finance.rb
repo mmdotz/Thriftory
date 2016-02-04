@@ -1,5 +1,6 @@
 class Finance < ActiveRecord::Base
   belongs_to :item, :autosave => true, :validate => true
+  default_scope { order(updated_at: :desc) } 
 
 
   def item_total_outlay

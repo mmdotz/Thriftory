@@ -22,7 +22,7 @@ Please use `jd@example.com` and `password` to use the demo tables.
 - Image hosting by Amazon Web Services
 - Refile for image upload
 - Minitest for model testing
-- Postgresql Database
+- PostgreSQL Database
 - Sass
 - React for dynamic item search
 - Bcrypt for password encryption
