@@ -11,7 +11,7 @@
       <div class="modal-body">
         <% if @inventory %>
         <h3> Total items in inventory: <%= @inventory %> </h3>
-        <h3> Total items added this week: <%= total_week_items %> </h3>
+        <h3> Total items added this week: <%= @total_week_items %> </h3>
         <h3> <% if Finance.total_profit? %>
         <%= "PROFITABLE!" %>
           <% else %>
@@ -38,11 +38,11 @@
   </div>
   <div class="row chart_block" >
     <div class="col-md-6">
-        <%= pie_chart current_user.items.group(:status).count %>
+        <%= pie_chart @items.group(:status).count %>
         <h3> Items by status</h3>
     </div>
     <div class="col-md-6">
-        <%= pie_chart current_user.items.group(:condition).count %>
+        <%= pie_chart @items.group(:condition).count %>
         <h3> Items by condition</h3>
     </div>
   </div>

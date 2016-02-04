@@ -2,6 +2,7 @@ class StatsController < ApplicationController
   def index
     @items = current_user.items
     @inventory = current_user.items.count
+    @total_week_items = @items.where("items.created_at > ?", Time.now-7.days).count
 
     #correct
     @moneyin = current_user.finances.sum("buyer_pmt")
