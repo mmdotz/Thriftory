@@ -10,9 +10,11 @@ class FinanceTest < ActiveSupport::TestCase
   end
 
   def test_item_profit? #single item buyer_pmt, item_total_outlay
-  end
-
-  def test_total_profit?
+    # check self.buyer_pmt > self.item_total_outlay
+    # given i have an item with seller costs (buyer costs may be 0)
+    # when I add up the seller costs
+    # and compare it to the buyer_pmt
+    # it will return true if the buyer_pmt is greater than sum of seller costs
   end
 
 end

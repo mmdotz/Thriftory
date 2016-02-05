@@ -17,14 +17,13 @@
           <th colspan="3"></th>
         </tr>
       </thead>
-
       <tbody>
         <% procure = [] %>
         <% shipping = [] %>
         <% pre_sale = [] %>
         <% buyer_pmt = [] %>
         <% @finances.each do |finance| %>
-          <tr>
+          <tr class="<%= cycle("true", "false") -%>">
             <td><%= finance.item.id %></td>
             <td><%= finance.item.description %></td>
             <td><%= number_to_currency(finance.procure_cost)%></td>

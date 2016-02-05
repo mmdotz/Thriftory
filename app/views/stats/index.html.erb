@@ -12,7 +12,7 @@
         <% if @inventory %>
         <h3> Total items in inventory: <%= @inventory %> </h3>
         <h3> Total items added this week: <%= @total_week_items %> </h3>
-        <h3> <% if Finance.total_profit? %>
+        <h3> <% if @moneyin > @moneyout %>
         <%= "PROFITABLE!" %>
           <% else %>
           <%= "Yikes! Expenses exceed profits; Go make a sale." %>
