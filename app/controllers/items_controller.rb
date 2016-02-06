@@ -53,6 +53,7 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @subcat1s   = @item.subcat2.subcat1.category.subcat1s
     @subcat2s   = @item.subcat2.subcat1.subcat2s
+    @sources = current_user.sources
   end
 
   def create

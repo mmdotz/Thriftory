@@ -3,6 +3,7 @@ class StatsController < ApplicationController
     @items = current_user.items
 
     #this needs be be filtered thru the current_user, showing db totals
+    #create join for Category and user
     @payment_by_category = Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
     }.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }]
 
