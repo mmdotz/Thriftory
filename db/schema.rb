@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20151109000227) do
 
   create_table "sources", force: :cascade do |t|
     t.string   "name",       default: "unknown"
-    t.datetime "date",       default: '2015-10-26 00:00:00'
+    t.datetime "date",       default: '2016-02-08 00:00:00'
     t.string   "address",    default: "unknown"
     t.string   "type_of",                                    null: false
     t.datetime "created_at",                                 null: false
