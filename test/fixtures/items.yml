@@ -7,10 +7,10 @@ one:
   storage_loc: "garage"
   status: "sold"
   condition: "good"
-  source_id:
-  subcat2_id:
-  category_id:
-  subcat1_id:
+  source_id: 2
+  subcat2_id: 2
+  category_id: 2
+  subcat1_id: 2
 
 two:
   description: "dress formal frilly prom"
@@ -19,7 +19,7 @@ two:
   storage_loc: "cabinet 5"
   status: "listed"
   condition: "poor"
-  source_id:
-  subcat2_id:
-  category_id:
-  subcat1_id:
+  source_id: 2
+  subcat2_id: 3
+  category_id: 3
+  subcat1_id: 2

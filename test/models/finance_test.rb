@@ -3,7 +3,21 @@ require 'test_helper'
 class FinanceTest < ActiveSupport::TestCase
 
   def valid_params
+    item = Item.create({
+
+
+
+
+
+
+      
+      })
   end
+
+  def test_item_total_outlay
+
+  end
+
 
   def test_sum_total_outlay
     #assert_equal(,)
