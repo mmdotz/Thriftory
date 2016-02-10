@@ -44,6 +44,7 @@ group :development do
 end
 
 group :test do
+  gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
 end
 
@@ -51,7 +52,7 @@ gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'bcrypt'
-gem 'figaro' 
+gem 'figaro'
 gem "refile", require: "refile/rails"
 gem 'refile-mini_magick'
 gem 'refile-s3'
