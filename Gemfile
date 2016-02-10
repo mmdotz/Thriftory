@@ -43,11 +43,15 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'minitest-reporters'
+end
+
 gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'bcrypt'
-gem 'figaro' #needed for file upload key ignore
+gem 'figaro' 
 gem "refile", require: "refile/rails"
 gem 'refile-mini_magick'
 gem 'refile-s3'
