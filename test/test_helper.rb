@@ -23,3 +23,21 @@ class ActiveSupport::TestCase
   fixtures :all
   # Add more helper methods to be used by all tests here...
 end
+
+def login_user_for_test
+  @user = User.new(:email => 'jayd@example.com')
+  @user.password = 'password'
+  @user.username = 'jaysond'
+  @user.address = '339 Maple Street, New Bedford, MA 02740'
+  @user.save!
+
+  visit login_path
+
+  fill_in "email",    with: @user.email
+  fill_in "password", with: @user.password  # Is bcrypt an issue here?
+  click_button "Sign In"
+end
+
+def current_user_for_test
+  @current_user ||= User.find_by_email('jayd@example.com')
+end
