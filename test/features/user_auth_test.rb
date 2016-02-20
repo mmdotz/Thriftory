@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "login" do
   scenario 'login with account' do
-    login_user_for_test
+    login_user_with_inventory_for_test
   end
 end
 

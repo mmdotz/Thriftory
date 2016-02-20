@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "Source" do
   scenario "displays newly created source" do
-    login_user_for_test
+    login_user_with_inventory_for_test
     source = Source.create(
       name: "Jim's Treasures",
       address: "129 Angell Street, Providence. RI 02912",
@@ -19,7 +19,7 @@ end
 
 feature "Source" do
   scenario "displays newly created source" do
-    login_user_for_test
+    login_user_with_inventory_for_test
     source = Source.create(
       name: "Jim's Treasures",
       address: "129 Angell Street, Providence. RI 02912",

@@ -24,17 +24,46 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-def login_user_for_test
-  @user = User.new(:email => 'jayd@example.com')
-  @user.password = 'password'
-  @user.username = 'jaysond'
-  @user.address = '339 Maple Street, New Bedford, MA 02740'
-  @user.save!
+def login_user_with_inventory_for_test
+  user = User.new(
+    :email => 'jayd@example.com',
+    :username => 'jaysond',
+    :address => '339 Maple Street, New Bedford, MA 02740'
+  )
+  user.password = 'password'
+  user.save!
+
+  category = Category.create(
+    :name => "Other"
+  )
+
+  subcat1 = Subcat1.create(
+    :name => "Books",
+    :category => category
+  )
+
+  subcat2 = Subcat2.create(
+    :name => "Vintage",
+    :subcat1 => subcat1
+  )
+
+  item = Item.create(
+    :description => "book vintage Ben Franklin Farmer's Almanac",
+    :quantity => 1,
+    :shipping => "free",
+    :storage_loc => "closet 4",
+    :status => "sold",
+    :condition => "poor",
+    :source_id => current_user_for_test.sources.last,
+    :subcat2_id => subcat2,
+    :subcat1_id => subcat1,
+    :category_id => category
+  )
 
   visit login_path
 
-  fill_in "email",    with: @user.email
-  fill_in "password", with: @user.password  # Is bcrypt an issue here?
+  fill_in "email",    with: user.email
+  fill_in "password", with: user.password  # Is bcrypt an issue here?
   click_button "Sign In"
 end
 
