@@ -33,6 +33,18 @@ def login_user_with_inventory_for_test
   user.password = 'password'
   user.save!
 
+  visit login_path
+
+  fill_in "email",    with: user.email
+  fill_in "password", with: user.password  # Is bcrypt an issue here?
+  click_button "Sign In"
+end
+
+def current_user_for_test
+  @current_user ||= User.find_by_email('jayd@example.com')
+end
+
+def create_inventory_for_test
   category = Category.create(
     :name => "Other"
   )
@@ -47,7 +59,7 @@ def login_user_with_inventory_for_test
     :subcat1 => subcat1
   )
 
-  item = Item.create(
+  item = Item.create( #ideally include finances but not required
     :description => "book vintage Ben Franklin Farmer's Almanac",
     :quantity => 1,
     :shipping => "free",
@@ -59,14 +71,4 @@ def login_user_with_inventory_for_test
     :subcat1_id => subcat1,
     :category_id => category
   )
-
-  visit login_path
-
-  fill_in "email",    with: user.email
-  fill_in "password", with: user.password  # Is bcrypt an issue here?
-  click_button "Sign In"
-end
-
-def current_user_for_test
-  @current_user ||= User.find_by_email('jayd@example.com')
 end
