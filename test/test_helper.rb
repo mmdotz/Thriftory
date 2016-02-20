@@ -36,6 +36,7 @@ def login_user_with_inventory_for_test
   visit login_path
 
   fill_in "email",    with: user.email
+  sleep 1
   fill_in "password", with: user.password  # Is bcrypt an issue here?
   click_button "Sign In"
 end
@@ -45,6 +46,8 @@ def current_user_for_test
 end
 
 def create_inventory_for_test
+  current_user_for_test
+
   category = Category.create(
     :name => "Other"
   )
@@ -57,6 +60,14 @@ def create_inventory_for_test
   subcat2 = Subcat2.create(
     :name => "Vintage",
     :subcat1 => subcat1
+  )
+
+  source = Source.create(
+    :name => "unknown",
+    :date => Time.now,
+    :address => "unknown",
+    :type_of => "Craigslist sale",
+    :user_id => current_user_for_test.id
   )
 
   item = Item.create( #ideally include finances but not required
