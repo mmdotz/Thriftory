@@ -24,7 +24,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-def login_user_with_inventory_for_test
+def login_user_for_test
   user = User.new(
     :email => 'jayd@example.com',
     :username => 'jaysond',
@@ -37,7 +37,7 @@ def login_user_with_inventory_for_test
 
   fill_in "email",    with: user.email
   sleep 1
-  fill_in "password", with: user.password  # Is bcrypt an issue here?
+  fill_in "password", with: user.password  
   click_button "Sign In"
 end
 
