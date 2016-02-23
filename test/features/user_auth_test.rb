@@ -8,7 +8,7 @@ end
 
 feature 'Create an Account' do
   scenario 'user enters valid input', js: true do
-    skip("pending") #selenium opens FireFox to add info
+    # skip("pending") #selenium opens FireFox to add info
     visit '/users/new'
 
     within '#user_registration' do
