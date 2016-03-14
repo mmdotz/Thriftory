@@ -1,4 +1,9 @@
+
+require 'elasticsearch/model'
+
 class Item < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   belongs_to  :source
   belongs_to  :subcat2
   has_many    :finances, dependent: :destroy
@@ -30,3 +35,5 @@ class Item < ActiveRecord::Base
   end
 
 end
+
+Item.import
