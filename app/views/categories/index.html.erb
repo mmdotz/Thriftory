@@ -30,6 +30,14 @@
   <br>
   <br>
   <br>
+  <p>Full Text search for items: Enter any part of item description</p>
+  <%= form_for categories_path, method: :get do |f| %>
+    <p>
+      <%= f.label "Search for" %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Go", name: nil %>
+    </p>
+    <% end %>
   <p>Choose a category to view or</p><br>
   <div class="row">
     <div class="col-md-2">
