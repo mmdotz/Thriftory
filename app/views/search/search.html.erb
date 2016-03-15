@@ -1,0 +1,22 @@
+<h1> Item Search </h1>
+
+<p>Full Text search for items: Enter any part of item description</p>
+
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+  <%= f.label "Search for" %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+If no query is entered, should return all items below:
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <h3>
+        <%= link_to item.description, controller: "items", action: "show", id: item._id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>

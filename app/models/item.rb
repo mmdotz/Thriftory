@@ -36,4 +36,4 @@ class Item < ActiveRecord::Base
 
 end
 
-# Item.import force: true
+Item.import 
