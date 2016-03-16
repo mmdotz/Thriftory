@@ -10,8 +10,9 @@
   </p>
 <% end %>
 
-If no query is entered, should return all items below:
+Results of search below (If no query is entered, should return all items below:)
 <ul>
+  <%= @items.count %>
   <% @items.each do |item| %>
     <li>
       <h3>
