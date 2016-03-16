@@ -36,4 +36,10 @@ class Item < ActiveRecord::Base
 
 end
 
-Item.import 
+Item.__elasticsearch__.client.indices.delete index: Item.index_name rescue nil
+
+Item.__elasticsearch__.client.indices.create \
+  index: Item.index_name,
+  body: { settings: Item.settings.to_hash, mappings: Item.mappings.to_hash }
+  
+Item.import
