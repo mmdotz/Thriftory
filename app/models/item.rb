@@ -2,8 +2,6 @@
 require 'elasticsearch/model'
 
 class Item < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
   belongs_to  :source
   belongs_to  :subcat2
   has_many    :finances, dependent: :destroy
@@ -35,11 +33,3 @@ class Item < ActiveRecord::Base
   end
 
 end
-
-Item.__elasticsearch__.client.indices.delete index: Item.index_name rescue nil
-
-Item.__elasticsearch__.client.indices.create \
-  index: Item.index_name,
-  body: { settings: Item.settings.to_hash, mappings: Item.mappings.to_hash }
-  
-Item.import

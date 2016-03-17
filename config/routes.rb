@@ -31,7 +31,6 @@ Rails.application.routes.draw do
     resources :finances
   end
 
-  get '/search',         to: 'search#search'
   get '/home',           to: 'homes#index',    as: 'home'
   get '/items.csv',      to: 'items#index', as: 'items_export'
   get '/update_subcat1', to: 'items#update_subcat1', as: 'subcategory1'
