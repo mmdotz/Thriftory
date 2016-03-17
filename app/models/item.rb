@@ -1,6 +1,4 @@
 
-require 'elasticsearch/model'
-
 class Item < ActiveRecord::Base
   belongs_to  :source
   belongs_to  :subcat2
