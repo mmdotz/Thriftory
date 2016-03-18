@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "login with success" do
+feature "login with success" do # passing
   scenario 'login with account' do
     login_user_for_test
   end
@@ -8,7 +8,7 @@ end
 
 feature 'Create an Account' do
   scenario 'user enters valid input', js: true do
-    skip("pending") #selenium opens FireFox to add info
+    # skip("pending") #selenium opens FireFox to add info
     visit '/users/new'
 
     within '#user_registration' do
@@ -26,7 +26,7 @@ end
 
 feature "login redirect" do
   scenario "redirect to login page if not signed in" do
-    skip("pending")
+    # skip("pending")
     visit home_path #cannot access until logged in
     page.must_have_css(".logo")
     page.wont_have_content("thrill") #home page content

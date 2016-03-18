@@ -2,11 +2,11 @@ require "test_helper"
 
 feature "Stats" do
   scenario "displays modal dropin on load", js: true do
-    skip("pending")
+    # skip("pending")
 
-    login_user_for_test
+    login_user_for_test # failing on login
     visit stats_index_path
-    within('.modal-dialog') do #Cap can't find class
+    within('.modal-dialog') do # Cap can't find class
       sleep 3
       binding.pry
       page.html

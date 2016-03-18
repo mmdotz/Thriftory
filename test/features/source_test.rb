@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Source" do
+feature "Source" do # passing
   scenario "displays newly created source" do
     login_user_for_test
     source = Source.create(
