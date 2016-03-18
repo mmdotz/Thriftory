@@ -27,5 +27,8 @@ module Thriftory
   end
   
     config.active_record.raise_in_transactional_callbacks = true
+    config.generators do |g|
+      g.test_framework :minitest, spec: true
+    end
   end
 end

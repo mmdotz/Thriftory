@@ -5,7 +5,23 @@ class SourcesControllerTest < ActionController::TestCase
     @source = sources(:one)
   end
 
-  test "should get index" do
+  describe "SourcesController" do
+    describe "GET :index" do
+      before do
+        get :index
+      end
+
+      it "renders sources/index" do
+        must_render_template "sources/index"
+      end
+
+      it "responds with success" do
+        must_respond_with :success
+      end
+    end
+  end
+
+test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:sources)

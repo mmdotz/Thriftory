@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+item_one:
   description: "vintage bowling shirt men's large maroon"
   quantity: 1
   shipping: "buyer"
@@ -9,10 +9,9 @@ one:
   condition: "good"
   source_id: 2
   subcat2_id: 2
-  category_id: 2
-  subcat1_id: 2
 
-two:
+
+item_two:
   description: "dress formal frilly prom"
   quantity: 1
   shipping: "pick up"
@@ -21,5 +20,3 @@ two:
   condition: "poor"
   source_id: 2
   subcat2_id: 3
-  category_id: 3
-  subcat1_id: 2

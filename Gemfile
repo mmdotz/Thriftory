@@ -9,6 +9,7 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # Use CoffeeScript for .coffee assets and views
 
 # Use jquery as the JavaScript library
@@ -33,6 +34,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'pry'
 end
 
 group :development do
@@ -53,7 +55,7 @@ gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'bcrypt'
-gem 'figaro' #needed for file upload key ignore
+gem 'figaro'
 gem "refile", require: "refile/rails"
 gem 'refile-mini_magick'
 gem 'refile-s3'

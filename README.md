@@ -22,6 +22,7 @@ Please use `jd@example.com` and `password` to use the demo tables.
 - Image hosting by Amazon Web Services
 - Refile for image upload
 - Minitest for model testing
+- Elasticsearch for full text search for items
 - PostgreSQL Database
 - Sass
 - React for dynamic item search
