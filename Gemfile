@@ -43,6 +43,12 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
+  gem 'selenium-webdriver'
+end
+
 gem 'react-rails'
 gem 'faker'
 gem 'kaminari'
