@@ -8,7 +8,7 @@ feature "Stats" do
     visit stats_index_path
     within('.modal-dialog') do # Cap can't find class
       sleep 3
-      binding.pry
+      # binding.pry
       page.html
       page.must_have_content(Time.now)
     end
