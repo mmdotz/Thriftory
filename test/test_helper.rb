@@ -37,49 +37,59 @@ def login_user_for_test
 
   fill_in "email",    with: user.email
   sleep 1
-  fill_in "password", with: user.password  
+  fill_in "password", with: user.password
   click_button "Sign In"
 end
 
+# works in console
 def current_user_for_test
   @current_user ||= User.find_by_email('jayd@example.com')
 end
 
+#in cosole, each object is instatiated, but @item.finances is nil
 def create_inventory_for_test
   current_user_for_test
 
-  category = Category.create(
-    :name => "Other"
-  )
+  @category = Category.create({
+    name: "Other"
+  })
 
-  subcat1 = Subcat1.create(
-    :name => "Books",
-    :category => category
-  )
+  @subcat1 = Subcat1.create({
+    name:        "Sports Memorabilia",
+    category_id: @category.id
+  })
 
-  subcat2 = Subcat2.create(
-    :name => "Vintage",
-    :subcat1 => subcat1
-  )
+  @subcat2 = Subcat2.create({
+    name:       "Vintage",
+    subcat1_id: @subcat1.id
+    })
 
-  source = Source.create(
-    :name => "unknown",
-    :date => Time.now,
-    :address => "unknown",
-    :type_of => "Craigslist sale",
-    :user_id => current_user_for_test.id
-  )
+  @source  = Source.create({
+    name:    "Bill's Pearls",
+    date:    Time.now,
+    address: "3601 Congress Avenue, Austin, TX 78701",
+    type_of: "store",
+    user_id: @current_user.id
+  })
 
-  item = Item.create( #ideally include finances but not required
-    :description => "book vintage Ben Franklin Farmer's Almanac",
-    :quantity => 1,
-    :shipping => "free",
-    :storage_loc => "closet 4",
-    :status => "sold",
-    :condition => "poor",
-    :source_id => current_user_for_test.sources.last,
-    :subcat2_id => subcat2,
-    :subcat1_id => subcat1,
-    :category_id => category
-  )
+  @item = Item.create({
+    description: "vintage basketball signed by Julius Irving",
+    quantity:    1,
+    shipping:    "buyer",
+    storage_loc: "closet 4",
+    status:      "sold",
+    condition:   "poor",
+    subcat1_id:  @subcat1.id,
+    subcat2_id:  @subcat2.id,
+    source_id:   @source.id,
+  })
+
+  @finance = Finance.create({
+    procure_cost:   0,
+    shipping_cost:  0,
+    pre_sale_notes: "Lorem ipsum",
+    pre_sale_cost:  0,
+    buyer_pmt:      0,
+    item_id:        @item.id
+    })
 end

@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_valid  #passing
-    user = User.new(valid_params)
+    user = User.new(valid_paramso)
 
     assert(user.valid?, "Can't create! See test_valid")
   end
@@ -44,7 +44,7 @@ class UserTest < ActiveSupport::TestCase
   def test_geocoder_creates_latandlong_values
     user = User.new(valid_params)       #given a user is instantiated with an address
     user.save!                          #when it is saved
-    
+
     assert(user.latitude)               #then the lat and long attributes
     assert(user.longitude)              #are populated
   end
