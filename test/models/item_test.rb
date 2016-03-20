@@ -22,7 +22,7 @@ class ItemTest < ActiveSupport::TestCase
       source_id:   @source.id,
     })
 
-    @finance = Finance.create({
+    @finance = @item.finances.create({
       procure_cost:   0,
       shipping_cost:  0,
       pre_sale_notes: "Lorem ipsum",
@@ -30,6 +30,12 @@ class ItemTest < ActiveSupport::TestCase
       buyer_pmt:      0,
       item_id:        @item.id
       })
+  end
+
+  def test_dependency_deleted_on_item_destroy   # given I have an item with finances
+    finance_count = Finance.count
+    @item.destroy                               # and I delete the item, failing here on FK constraint - not recognizing model dependent: :destroy
+    assert_equal(finance_count - 1, Finance.count)
   end
 
   def test_item_has_a_finance
