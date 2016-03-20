@@ -19,7 +19,7 @@ class ItemTest < ActiveSupport::TestCase
       quantity:    1,
       shipping:    "buyer",
       subcat2_id:  @subcat2.id,
-      source_id:   @source.id, 
+      source_id:   @source.id,
     })
 
     @finance = Finance.create({
@@ -32,9 +32,8 @@ class ItemTest < ActiveSupport::TestCase
       })
   end
 
-  def test_dependency_deleted_on_item_destroy
-    @item.destroy                                #and I delete the item
-		assert_difference(-1, @item.finances.count)  #then the assoc. finance is destroyed
+  def test_item_has_a_finance
+		assert_not_nil(@item.finances)
 	end
 
   def test_item_create #passing
