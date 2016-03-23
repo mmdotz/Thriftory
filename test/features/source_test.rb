@@ -9,6 +9,7 @@ feature "Source" do # passing only without selenium below
       type_of: "store",
       user_id: current_user_for_test.id
       )
+      
     visit sources_path
 
     page.must_have_content("Treasures")
