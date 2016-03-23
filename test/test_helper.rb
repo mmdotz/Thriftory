@@ -7,6 +7,7 @@ require "minitest/rails"
 # to the test group in the Gemfile and uncomment the following:
 require "minitest/rails/capybara"
 require "minitest/reporters"
+require "minitest/autorun"
 Minitest::Reporters.use!(
   Minitest::Reporters::SpecReporter.new,
   ENV,
@@ -25,11 +26,11 @@ class ActiveSupport::TestCase
 end
 
 def login_user_for_test
-  user = User.new(
-    :email => 'jayd@example.com',
-    :username => 'jaysond',
-    :address => '339 Maple Street, New Bedford, MA 02740'
-  )
+  user = User.new({
+    email:    'jayd@example.com',
+    username: 'jaysond',
+    address:  '339 Maple Street, New Bedford, MA 02740'
+  })
   user.password = 'password'
   user.save!
 
@@ -38,6 +39,7 @@ def login_user_for_test
   fill_in "email",    with: user.email
   sleep 1
   fill_in "password", with: user.password
+  sleep 1
   click_button "Sign In"
 end
 
@@ -46,9 +48,8 @@ def current_user_for_test
   @current_user ||= User.find_by_email('jayd@example.com')
 end
 
-#in cosole, each object is instatiated, but @item.finances is nil
 def create_inventory_for_test
-  current_user_for_test
+  current_user_for_test  # before removing this redundancy, check all tests
 
   @category = Category.create({
     name: "Other"
@@ -82,9 +83,10 @@ def create_inventory_for_test
     subcat1_id:  @subcat1.id,
     subcat2_id:  @subcat2.id,
     source_id:   @source.id,
+    category_id: @category.id
   })
 
-  @finance = Finance.create({
+  @finance = @item.finances.create({
     procure_cost:   0,
     shipping_cost:  0,
     pre_sale_notes: "Lorem ipsum",
