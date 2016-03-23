@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_valid  #passing
-    user = User.new(valid_paramso)
+    user = User.new(valid_params)
 
     assert(user.valid?, "Can't create! See test_valid")
   end

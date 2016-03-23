@@ -8,6 +8,7 @@ feature "create_inventory_for_test_method_builds_an_item" do #testing a test??
     # binding.pry
 
     @item.wont_be_nil
+    @item.finances.wont_be_nil
   end
 end
 
