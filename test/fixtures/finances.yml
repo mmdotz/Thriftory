@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# valid
 finance_one:
   procure_cost: 1
   shipping_cost: 1
   pre_sale_notes: "dry cleaning required"
   pre_sale_cost: 1
-  buyer_pmt: 1
-  item: item_one
+  buyer_pmt: 0
+  item: item_two    # not item_id!
 
+# invalid
 finance_two:
   procure_cost: 1
   shipping_cost: 1
   pre_sale_notes: "repair loose buttons on shirt"
   pre_sale_cost: 1
-  buyer_pmt: 1
-  item: 
+  buyer_pmt: 70
+  item:

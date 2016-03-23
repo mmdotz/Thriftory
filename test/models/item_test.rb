@@ -2,45 +2,49 @@ require 'test_helper'
 
 class ItemTest < ActiveSupport::TestCase
 
-  def valid_item_params
-    {
-      description: "vintage basketball signed by Julius Irving",
-      quantity:   1,
-      shipping:   "buyer",
-      subcat2_id: 3,
-      source_id:  4, #where do I define the source?
-      id:         45
-    }
-  end
+  def setup
+    @source  = Source.create({
+      name:   "Bill's Pearls",
+      date:   "3/17/2016",
+      address: "3601 Congress Avenue, Austin, TX 78701",
+      type_of: "store"
+      })
 
-  def valid_finance_params
-    {
+    @subcat2 = Subcat2.create({
+      name:   "Books"
+      })
+
+    @item = Item.create({
+      description: "vintage basketball signed by Julius Irving",
+      quantity:    1,
+      shipping:    "buyer",
+      subcat2_id:  @subcat2.id,
+      source_id:   @source.id,
+    })
+
+    @finance = @item.finances.create({
       procure_cost:   0,
       shipping_cost:  0,
       pre_sale_notes: "Lorem ipsum",
       pre_sale_cost:  0,
       buyer_pmt:      0,
-      item_id:        45 #how do I choose the previously made item other than nesting?
-    }
+      item_id:        @item.id
+      })
   end
 
-  def test_dependency_destroyed_on_item_delete
-    item = Item.create(valid_item_params)       #given i create an item with finances
-		item.finances.create!(valid_finance_params)
-    item.destroy                                #and I delete the item
-		assert_difference(-1, 'Finance.count')      #then the assoc. finance is destroyed
+  def test_dependency_deleted_on_item_destroy   # given I have an item with finances
+    finance_count = Finance.count
+    @item.destroy                               # and I delete the item, failing here on FK constraint - not recognizing model dependent: :destroy
+    assert_equal(finance_count - 1, Finance.count)
+  end
+
+  def test_item_has_a_finance
+		assert_not_nil(@item.finances)
 	end
 
+  def test_item_create #passing
+    assert_instance_of Item, @item
+  end
+
 
 end
-
-
-=begin
-
-def item_params
-  params.require(:item).permit(:category_id, :subcat1_id, :subcat2_id,
-  :description, :quantity, :shipping, :storage_loc, :status, :source_id, :condition, :status,
-  finances_attributes: [:id,:procure_cost, :shipping_cost, :pre_sale_cost, :buyer_pmt] )
-end
-
-=end

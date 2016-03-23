@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Source" do
+feature "Source" do # passing only without selenium below
   scenario "displays newly created source" do
     login_user_for_test
     source = Source.create(
@@ -10,9 +10,8 @@ feature "Source" do
       user_id: current_user_for_test.id
       )
     visit sources_path
-    current_user_for_test.sources.find_each do |source|
-      page.must_have_content("Treasures")
-      page.must_have_content(source.address)
-    end
+
+    page.must_have_content("Treasures")
+    page.must_have_content(source.address)
   end
 end

@@ -1,14 +1,18 @@
 require "test_helper"
 
-feature "login with success" do
+feature "successful login" do
   scenario 'login with account' do
+    # skip("pending")
     login_user_for_test
+    current_user_for_test
+    visit '/home'
+    page.must_have_content("reseller")
   end
 end
 
 feature 'Create an Account' do
-  scenario 'user enters valid input', js: true do
-    skip("pending") #selenium opens FireFox to add info
+  scenario 'user enters valid input' do
+    # skip("pending")
     visit '/users/new'
 
     within '#user_registration' do
@@ -19,14 +23,16 @@ feature 'Create an Account' do
       click_button 'Create User'
     end
 
-    page.must_have_content 'Please sign'
-    page.current_path.must_equal '/login'
+    login_user_for_test #this creates the user again tho
+
+    page.must_have_content 'reseller'
+    page.current_path.must_equal '/home'
   end
 end
 
 feature "login redirect" do
   scenario "redirect to login page if not signed in" do
-    skip("pending")
+    # skip("pending")
     visit home_path #cannot access until logged in
     page.must_have_css(".logo")
     page.wont_have_content("thrill") #home page content
