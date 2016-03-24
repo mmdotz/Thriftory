@@ -2,12 +2,10 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   after_action :remove_cache
 
-  # GET /items
-  # GET /items.json
   def index
     @items = current_user.items
     #in Item model, created helper method to tell attachment method which object
-    #we are passing in for refile upload, otherwise reterned JSON objects on :back
+    #we are passing in for refile upload, otherwise returned JSON objects on :back
     respond_to do |format|
       format.html do
         response.headers["Cache-Control"] = "no-cache"
@@ -23,13 +21,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/1
-  # GET /items/1.json
   def show
     @item = Item.find(params[:id])
   end
 
-  # GET /items/new
   def new
     @item       = Item.new
     @item.finances.new
@@ -69,8 +64,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -83,8 +76,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
     respond_to do |format|
@@ -94,12 +85,10 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:category_id, :subcat1_id, :subcat2_id,
       :description, :quantity, :shipping, :storage_loc, :status, :source_id, :condition, :status,

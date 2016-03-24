@@ -1,22 +1,16 @@
 class FinancesController < ApplicationController
   before_action :set_finance, only: [:show, :edit, :update, :destroy]
 
-  # GET /finances
-  # GET /finances.json
   def index
     @finances = current_user.finances
   end
 
-  # GET /finances/new
   def new
   end
 
-  # GET /finances/1/edit
   def edit
   end
 
-  # POST /finances
-  # POST /finances.json
   def create
     @finance = Finance.new(finance_params)
 
@@ -31,8 +25,6 @@ class FinancesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /finances/1
-  # PATCH/PUT /finances/1.json
   def update
     respond_to do |format|
       if @finance.update(finance_params)
@@ -45,8 +37,6 @@ class FinancesController < ApplicationController
     end
   end
 
-  # DELETE /finances/1
-  # DELETE /finances/1.json
   def destroy
     @finance.destroy
     respond_to do |format|
@@ -56,12 +46,10 @@ class FinancesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_finance
       @finance = Finance.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def finance_params
       params.require(:finance).permit(:procure_cost, :shipping_cost, :pre_sale_notes, :pre_sale_cost, :buyer_pmt, :item_id)
     end

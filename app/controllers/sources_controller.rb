@@ -1,25 +1,19 @@
 class SourcesController < ApplicationController
   before_action :set_source, only: [:show, :edit, :update, :destroy]
 
-  # GET /sources
-  # GET /sources.json
   def index
     @sources = current_user.sources
     @user = current_user
   end
 
 
-  # GET /sources/new
   def new
     @source = Source.new
   end
 
-  # GET /sources/1/edit
   def edit
   end
 
-  # POST /sources
-  # POST /sources.json
   def create
     @source = Source.new(source_params)
     @source.user_id = current_user.id
@@ -35,8 +29,6 @@ class SourcesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sources/1
-  # PATCH/PUT /sources/1.json
   def update
     respond_to do |format|
       if @source.update(source_params)
@@ -50,8 +42,6 @@ class SourcesController < ApplicationController
     end
   end
 
-  # DELETE /sources/1
-  # DELETE /sources/1.json
   def destroy
     @source.destroy
     respond_to do |format|
@@ -61,12 +51,10 @@ class SourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_source
       @source = Source.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
       params.require(:source).permit(:name, :date, :address, :type_of, :latitude, :longitude)
     end
