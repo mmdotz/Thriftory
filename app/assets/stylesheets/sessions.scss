@@ -19,7 +19,6 @@
 
 .login_title h1 {
   padding-top: 100px;
-
 }
 
 .form-signin {
@@ -59,4 +58,10 @@
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.login #legend {
+  color: #eee;
+  margin-left:auto;
+  margin-right:auto;
 }
