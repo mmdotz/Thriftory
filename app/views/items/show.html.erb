@@ -9,7 +9,7 @@
           <%= link_to 'Add photos', new_photo_path(item_id: params[:id]),
           class: "btn btn-warning box-shadow--8dp" %>
       <% else %>
-        <%= image_tag attachment_url(@item.photos.first, :image, :fill, 400, 400, format: :jpg) %>
+        <%= image_tag attachment_url(@item.primary_photo, :image, :fill, 400, 400, format: :jpg, fallback: "no_image.gif") %>
       <% end %>
     </div>
     <div class="col-md-4 col-md-offset-1" id="item_attr">

@@ -30,6 +30,12 @@ class ItemTest < ActiveSupport::TestCase
       buyer_pmt:      0,
       item_id:        @item.id
       })
+
+    @photo = @item.photos.create({
+      # id is nil when uploaded from inside project
+      image_id: "98t79nil",
+      item_id:  @item.id
+      })
   end
 
   def test_dependency_deleted_on_item_destroy   # given I have an item with finances
@@ -44,6 +50,15 @@ class ItemTest < ActiveSupport::TestCase
 
   def test_item_create #passing
     assert_instance_of Item, @item
+  end
+
+  def test_item_primary_photo
+    # if item has photo, return primary_photo
+    assert_not_nil(@item.primary_photo.id)
+    # else return default photo
+    @photo.destroy
+    assert_nil(@item.primary_photo.id)
+
   end
 
 

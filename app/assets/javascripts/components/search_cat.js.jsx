@@ -37,7 +37,7 @@ var Search = React.createClass({
             </div>
           </div>
         </p>
-        <div className="table-responsive">
+        <div className="table-responsive" >
           <table className="table table-hover">
             <thead>
               <tr>
@@ -63,7 +63,7 @@ var Search = React.createClass({
                     <td>{ item.storage_loc }</td>
                     <td>{ item.status }</td>
                     <td>{ item.source.name }</td>
-                    <td><img src={ item.photo_url } /></td>
+                    <td><img className="thumbnail_photo" src={ item.photo_url } /></td>
                   </tr>
                 );
               })}

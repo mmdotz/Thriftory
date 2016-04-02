@@ -2,6 +2,7 @@
 class Item < ActiveRecord::Base
   belongs_to  :source
   belongs_to  :subcat2
+  belongs_to  :category
   has_many    :finances, dependent: :destroy
   has_many    :photos, dependent: :destroy
 
@@ -23,11 +24,16 @@ class Item < ActiveRecord::Base
   # see Item#index for use
 
   def photo_url
-    ActionController::Base.helpers.attachment_url(self.photos.first, :image, :fill, 50, 50, format: :jpg)
+    ActionController::Base.helpers.attachment_url(self.primary_photo, :image, :fill, 50, 50, format: :jpg, fallback: "no_image.gif")
   end
 
   def sum_total_outlay
     self.finances.map { |f| f.item_total_outlay }.sum
   end
+
+  def primary_photo
+    self.photos.first || photos.build
+  end
+
 
 end
