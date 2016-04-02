@@ -4,7 +4,6 @@ class CalculateIncome
     @user = user
     @items = user.items
     @finances = user.finances
-
   end
 
   def call #change this for calc
@@ -12,15 +11,15 @@ class CalculateIncome
     }.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }]
   end
 
+  #  returns hash with category object key, array of item objects value
   def items_by_category
     @items.each_with_object({}) do |item, hsh|
-      hsh[item.category] ||= []
-      hsh[item.category] << item
+      hsh[item.category.name] ||= [] # sets key to cat name 
+      hsh[item.category.name] << item
     end
-
   end
 
-
+  # array of category objects per item
   def categories
     @items.map do |i|
       i.category

@@ -16,3 +16,4 @@ class Finance < ActiveRecord::Base
   end
 
 end
+
