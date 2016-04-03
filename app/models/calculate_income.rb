@@ -14,21 +14,9 @@ class CalculateIncome
   #  returns hash with category object key, array of item objects value
   def items_by_category
     @items.each_with_object({}) do |item, hsh|
-      hsh[item.category.name] ||= [] # sets key to cat name 
+      hsh[item.category.name] ||= [] # sets key to cat name
       hsh[item.category.name] << item
     end
   end
-
-  # array of category objects per item
-  def categories
-    @items.map do |i|
-      i.category
-    end
-  end
-
-  def category_sum(category)
-  end
-
-
 
 end
