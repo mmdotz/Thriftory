@@ -6,6 +6,11 @@ class CalculateIncome
     @finances = user.finances
   end
 
+  def buyer_pmts
+    @items.
+  end
+
+
   def call #change this for calc
     Hash[Category.all.map(&:finances).map { |fin_array| fin_array.map(&:buyer_pmt).sum
     }.map.with_index { |amt, index| [Category.find(index + 1).name, amt] }]
