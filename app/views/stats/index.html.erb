@@ -51,15 +51,11 @@
 <!--these need to be corrected for current_user -->
   <div class="row chart_block">
     <div class="col-md-6">
-        <%= bar_chart(@payment_by_category) %>
+        <%= bar_chart(@income_by_category) %>
         <h3> Income by category <h3>
     </div>
     <div class="col-md-6">
-      <%= bar_chart({
-      "Furniture" => @furniture_expense,
-       "Clothing" => @clothing_expense,
-       "Household & Decor" => @household_expense,
-       "Other" => @other_expense }) %>
+      <%= bar_chart(@expense_by_category) %>
          <h3>Expense by category</h3>
     </div>
   </div>
