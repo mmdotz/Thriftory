@@ -2,8 +2,8 @@ class CalculateIncome
 
   def initialize(user)
     @user = user
-    @items = user.items
-    @finances = user.finances
+    @items = @user.items
+    @finances = @user.finances
   end
 
   #  returns hash with item id key, array of finance objects value
@@ -15,16 +15,15 @@ class CalculateIncome
   end
 
   #  in console, returns hash with item id key, array of buyer_pmts as value
-  def items_with_finances_2
-    user = User.find(2)
-    finances = user.finances
-    finances.each_with_object({}) do |finance, hsh|
-      hsh[finance.item] ||= []
-      hsh[finance.item] << finance.buyer_pmt
+  def categories_with_finances
+    @finances.each_with_object({}) do |finance, hsh|
+      hsh[finance.item.category.name] ||= []
+      hsh[finance.item.category.name] << finance.buyer_pmt
     end
   end
 
-  #  returns hash with category object key, array of item objects value
+  # returns hash with category object key, array of item objects value for Income by Category chart
+  # can items join finances here?
   def items_by_category
     @items.each_with_object({}) do |item, hsh|
       hsh[item.category.name] ||= [] # sets key to cat name
