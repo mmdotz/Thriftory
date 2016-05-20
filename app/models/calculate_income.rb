@@ -16,10 +16,11 @@ class CalculateIncome
 
   #  in console, returns hash with item id key, array of buyer_pmts as value
   def categories_with_finances
-    @finances.each_with_object({}) do |finance, hsh|
+    hash = @finances.each_with_object({}) do |finance, hsh|
       hsh[finance.item.category.name] ||= []
       hsh[finance.item.category.name] << finance.buyer_pmt
     end
+    new_hash = Hash[hash.map { |k,v| [k, v.inject(:+)]}]
   end
 
   # returns hash with category object key, array of item objects value for Income by Category chart
